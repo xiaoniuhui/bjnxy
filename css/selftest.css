@@ -1,0 +1,166 @@
+/*中间版心内容开始*/
+.application .content{
+  width: 980px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+.application .content p{
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#5e5e5e;
+  text-align:center;
+  margin-bottom: 50px;
+}
+/*仪器设备信息*/
+.application .content .yiqiinfo{
+  width: 100%;
+  height: 260px;
+  background-color: #fcfcfc;
+  margin-top: 15px;
+}
+.application .content h4{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f2f2f2;
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:#5e5e5e;
+  text-align:left;
+  padding-left: 30px;
+}
+/*信息内容样式*/
+.application .yiqiinfo dl{
+  float: left;
+  margin-left: 76px;
+  margin-top: 30px;
+}
+.application .yiqiinfo dl  dd{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#888888;
+  letter-spacing:0;
+  text-align: left;
+  margin-bottom: 20px;
+
+}
+.application .yiqiinfo dl  span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+  padding-left:15px;
+}
+.application .yiqiinfo .right{
+  float: right;
+  margin-right: 307px;
+}
+/*个人基本信息*/
+.application .content .personinfo{
+  width: 100%;
+  height: 260px;
+  background-color: #fcfcfc;
+}
+.application .content input{
+  background:#ffffff;
+  border:1px solid #ebebeb;
+  border-radius:2px;
+  width:278px;
+  height:40px;
+  margin-left: 15px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+  letter-spacing:0;
+  text-align:left;
+  padding-left: 12px;
+}
+.application .content select{
+  background:#ffffff;
+  border:1px solid #ebebeb;
+  border-radius:2px;
+  width:278px;
+  height:40px;
+  margin-left: 15px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+  letter-spacing:0;
+  text-align:left;
+  padding-left: 12px;
+}
+
+.application .content label{
+  margin-left: 42px;
+  margin-top: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#888888;
+  letter-spacing:0;
+  text-align: right;
+  width: 90px;
+  font-weight: normal;
+}
+
+
+/*样品信息*/
+.application .content .simpleinfo{
+  width: 100%;
+  background-color: #fcfcfc;
+}
+.application .content textarea{
+  background:#ffffff;
+  border:1px solid #ebebeb;
+  border-radius:2px;
+  width:710px;
+  height:120px;
+  margin-top: 20px;
+  resize: none;
+  vertical-align: top;
+  margin-left: 15px;
+}
+
+/*项目测试及要求*/
+.application .content .test{
+  width: 100%;
+  background-color: #fcfcfc;
+}
+/*预计收费*/
+.application .content .pay{
+  width: 100%;
+  height: 122px;
+  background-color: #f8f8f8;
+  margin-top: 60px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  text-align: center;
+}
+.application .content .pay p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+  text-align:center;
+  margin: 0;
+}
+.application .content .pay span{
+  font-family:MicrosoftYaHei;
+  font-size:24px;
+  color:#e66415;
+  letter-spacing:0;
+}
+/*按钮组*/
+.application .content .btngroup{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 45px;
+}
+.application .content .btngroup button{
+  background-color: #178c5b;
+  width: 74px;
+  height: 32px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+  text-align:center;
+}

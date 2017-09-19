@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>填写账户名</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/fillaccount.css">
+  <link rel="stylesheet" href="css/font_rtk4hl3smm42t9/iconfont.css">
+  <script src="css/font_rtk4hl3smm42t9/iconfont.js"></script>
+</head>
+<body>
+        <!-- 登录 -->
+        <form action="" id="loginform">
+          <div id="loginbox">
+            <div class="login-title">账号登录</div>
+            <input type="text" 
+                   style="margin-top: 50px;margin-bottom: 8px;" 
+                   data-required
+                   data-description='nickname'
+                   id="nickname" 
+                   data-describedby='msg'
+                   placeholder="用户名">
+                   <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+            <input type="password"
+                   data-required
+                   data-description='pwd'
+                   id="pwd"
+                   data-describedby='pwdmsg'
+                   placeholder="密码">
+                   <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+            <a href="fillaccount.html"><span>忘记密码</span></a>
+            <button type="submit" id="loginbtn">登录</button>
+            <div class="xiaowai">
+              <a href="">统一身份认证</a>
+              <a href="notice.html" style="float: right;">校外用户注册</a>
+            </div>
+          </div>
+        </form>
+        <!-- 头部登录 -->
+        <div class="header" id="backtop">    
+          <div class="w clearfix">
+            <div class="logo"><img src="images/logo.png" alt=""></div>
+            <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+            <div class="login">
+              <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+              <a href="notice.html" target="_blank">校外用户注册</a>
+            </div>
+          </div>
+        </div>
+
+        
+        <!-- 中间内容 -->
+        <div class="middle">
+          <div class="up">
+            <div class="navigation w">
+              <div class="tishi">
+                <div class="item">
+                  <i class="iconfont icon-jindu" style="color:#178c5b;font-size:24px;"></i>
+                  <span style="color: #178c5b;font-size: 14px;">填写账户名</span>
+                </div>
+                <div class="line"></div>
+                <div class="item">
+                  <i class="iconfont icon-jindu" style="color:#999;font-size:8px;"></i>
+                  <span style="color: #444;font-size: 12px;">验证身份</span>
+                </div>
+                <div class="line"></div>
+                <div class="item">
+                  <i class="iconfont icon-jindu" style="color:#999;font-size:8px;"></i>
+                  <span style="color: #444;font-size: 12px;">设置新密码</span>
+                </div>
+                <div class="line"></div>
+                <div class="item">
+                  <i class="iconfont icon-jindu" style="color:#999;font-size:8px;"></i>
+                  <span style="color: #444;font-size: 12px;">完成</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="down">
+            <div class="information w">
+              <div class="name">
+                <label for="">用户名</label>
+                <input type="text" class="user" placeholder="用户名／邮箱／已验证手机">
+              </div>
+              <div class="password">
+                <label for="">验证码</label>
+                <input type="text" class="psd" placeholder="">
+
+                <span class="look">看不清？</span>
+                <a href="" class="replace">换一张</a>
+              </div>
+              <button class="submit">提交</button>
+            </div>
+          </div>
+        </div>
+        <!-- 中间内容结束 -->
+
+
+
+
+
+
+
+
+        <!-- 底部 -->
+        <div class="footer w">
+            <div class="links w">
+              <a href="#">友情链接:</a>
+              <a href="#">采购信息网</a>
+              <a href="#">实验室</a>
+              <a href="#">资产</a>
+              <a href="#">大型仪器设备共享</a>
+              <a href="#">实验室安全考试培训</a>
+              <a href="#">国家网络管理平台</a>
+              <a href="#">云南省大仪网</a>
+              <a href="#">某某高校</a>
+            </div>
+            <div class="copyright">
+              <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+              <br/>
+              <span>首页访问次数</span><span>1101次</span>
+            </div>
+        </div>
+        
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="assets/layer/layer.js"></script>
+        <script src="assets/Validate-master/jquery-validate.min.js"></script>
+        <script src="assets/form-master/jquery.form.js"></script>
+        <script src="js/login.js"></script>
+        <script>
+          $('.submit').on('click',function(){
+            alert('提交');
+            window.location.href='identify.html'
+          })
+        </script>
+</body>
+</html>

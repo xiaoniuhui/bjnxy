@@ -1,0 +1,96 @@
+
+.middle{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color:#F3F6F5; 
+}
+.middle .context{
+  width: 1180px;
+  margin:0 auto;
+}
+.middle .notice{
+  width: 700px;
+  height: 970px;
+  background-color: #F9F8F8;
+  margin-top: 39px;
+  margin-left: 240px;
+  border: 1px solid #dedede;
+}
+
+.middle .notice .title{
+  width: 698px;
+  height: 60px;
+  background-color: #f4f4f4;
+  line-height: 60px;
+  text-align: center;
+/*  padding-top: 19px;
+  box-sizing: border-box;*/
+}
+
+.middle .notice .title span{
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:#444444;
+/*  margin-top: 19px;
+  display: inline-block;*/
+}
+
+.middle .notice .text{
+  width: 700px;
+  padding: 20px 30px 30px;
+  box-sizing: border-box;
+  line-height: 26px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+}
+.middle .notice .text .two{
+  margin-left: 30px;
+  margin-bottom: 22px;
+}
+
+.middle .notice .text .section1{
+  font-weight:bold;
+}
+
+.middle .notice .text .text1{
+  margin-left: 30px;
+}
+
+.middle .notice .text .section2{
+  font-weight:bold;
+  margin-top: 17px;
+}
+
+.middle .agree{
+  margin-left: 239px;
+  margin-top: 10px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+}
+
+.middle .agree input{
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.middle .agree label{
+  padding-left: 5px; 
+  display: inline-block;
+  vertical-align: middle; 
+}
+
+.middle .step{
+  width: 241px;
+  height: 32px;
+  background-color: #178c5b;
+  line-height: 32px;
+  margin: 16px 469px 75px;
+  border: none;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#ffffff;
+}

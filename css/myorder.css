@@ -1,0 +1,303 @@
+body{
+  font-family:MicrosoftYaHei;
+  background:#f3f6f5;
+}
+.bg{
+  width: 100%;
+  height: 160px;
+  line-height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+  font-size:28px;
+  color:#ffffff;
+  text-align:center;
+}
+/*顶部面板导航*/
+.top-title{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f9f9f9;
+}
+.top-title .first{
+  font-size:14px;
+  color:#999999;
+}
+.top-title .last{
+  font-size:14px;
+  color:#178c5b;
+}
+/*主题内容开始*/
+.order-cont{
+  position: relative;
+  padding-top: 20px;
+}
+/*左侧内容*/
+.current{
+  color: #178c5b !important;
+}
+.order-cont .left{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 120px;
+}
+.order-cont .left dl{
+  font-size:16px;
+  color:#444444;
+  text-align:left;
+  margin-bottom: 12px;
+}
+.order-cont .left dd a{
+  font-size:14px;
+  color:#999999;
+  text-align:left;
+  line-height: 1;
+  padding-bottom: 12px;
+  display: block;
+}
+.order-cont .left dd a:hover{
+  cursor: pointer;
+  color: #178c5b;
+}
+
+/*右侧内容*/
+.order-cont .right{
+  margin-left: 120px;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+}
+/*tab切换*/
+.order-cont .right .tab{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 0;
+}
+.order-cont .right .tab ul{
+  overflow: hidden;
+}
+.order-cont .right .tab li{
+  float: left;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size:14px;
+  color:#666666;
+  text-align:left;
+  border-bottom: 1px solid transparent;
+}
+.order-cont .right .tab li:hover{
+  border-bottom: 1px solid #178c5b;
+}
+.order-cont .right .tab li span{
+  background:#f85c32;
+  border-radius:53px;
+  font-size:12px;
+  color:#ffffff;
+  text-align:center;
+  margin-left: 5px;
+  padding: 0 5px;
+}
+/*表头样式*/
+.order-cont .right .top{
+  background:#f9f9f9;
+  height:42px;
+  line-height: 42px;
+}
+.order-cont .right .top>div{
+  float: left;
+  font-size:12px;
+  color:#777777;
+  text-align:center;
+}
+.order-cont .right .top .detail{
+  width: 359px;
+}
+.order-cont .right .top .type{
+  width: 109px;
+}
+.order-cont .right .top .pay{
+  width: 129px;
+}
+.order-cont .right .top .shiji{
+  width: 119px;
+}
+.order-cont .right .top .state{
+  width: 139px;
+}
+.order-cont .right .top .operate{
+  width: 155px;
+}
+/*列表循环*/
+.order-cont .right .item{
+  background:#ffffff;
+  border:1px solid #e0e0e0;
+  width:1018px;
+  height:153px;
+  margin-top: 10px;
+}
+.order-cont .right .item .i-top{
+  background:#f7f7f7;
+  height:34px;
+  line-height: 34px;
+  padding-left: 20px;
+}
+.order-cont .right .item .i-right{
+  font-size:12px;
+  color:#444444;
+  text-align:left;
+  margin-right: 40px;
+}
+.order-cont .right .item .i-left{
+  font-size:12px;
+  color:#999999;
+  text-align:left;
+}
+/*内容*/
+
+.order-cont .right .item .i-cont>div{
+  float: left;
+  height: 120px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.order-cont .right .item .detail{
+  width: 359px;
+  border-right: 1px solid #e0e0e0;
+  position:relative;
+}
+.order-cont .right .item .detail img{
+  padding:0 20px;
+}
+.order-cont .right .item .detail .info{
+  font-size:14px;
+  color:#444444;
+  text-align:left;
+  position: absolute;
+  top: 20px;
+  width: 140px;
+}
+
+.order-cont .right .item .type{
+  width: 109px;
+  border-right: 1px solid #e0e0e0;
+  font-size:12px;
+  color:#444444;
+  text-align:center;
+}
+.order-cont .right .item .pay{
+  width: 129px;
+  border-right: 1px solid #e0e0e0;
+  font-size:12px;
+  color:#444444;
+  text-align:center;
+}
+.order-cont .right .item .shiji{
+  width: 119px;
+  border-right: 1px solid #e0e0e0;
+  font-size:12px;
+  color:#999999;
+  text-align:center;
+}
+.order-cont .right .item .state{
+  width: 139px;
+  border-right: 1px solid #e0e0e0;
+  font-size:12px;
+  color:#444444;
+  text-align:center;
+}
+.order-cont .right .item .operate{
+  width: 155px;
+}
+.order-cont .right .item .operate .t{
+  display: block;
+  font-size:12px;
+  color:#444444;
+  text-align:center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.order-cont .right .item .operate .b{
+  display: block;
+  font-size:12px;
+  color:#444444;
+  text-align:center;
+  cursor: pointer;
+}
+
+/*分页按钮*/
+/*分页按钮组公共样式*/
+ .pagebtn{
+  width: 100%;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+  padding: 30px  0;
+  overflow: hidden;
+}
+ .pagebtn .rr{
+  float: right;
+  margin-right: 10px;
+}
+
+ .pagebtn .arrbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+ .pagebtn .btnbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:30px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+ .pagebtn .total{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+ .pagebtn .next{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+ .pagebtn input{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;  
+  margin-right: 10px;    
+}
+ .pagebtn .btn{
+  background:#178c5b;
+  border-radius:2px;
+  width:54px;
+  height:32px;
+  line-height: 32px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+}
+

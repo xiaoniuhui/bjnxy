@@ -1,0 +1,133 @@
+/*同步公共代码*/
+.middle .up{
+  width: 100%;
+  height: 100px;
+  background-color: #F8FBFA;
+}
+
+.middle .down{
+  width: 100%;
+  height: 620px;
+  background-color: #F3F6F5;
+}
+
+.middle .up .navigation{
+  height: 100px;
+}
+/*字体图标*/
+/*.icon {
+   width: 24px; 
+   height: 24px;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+   margin-top: 25px;
+   color: red;
+}*/
+
+.middle .up .navigation .tishi{
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.middle .up .navigation .tishi span{
+  display: block;
+  margin-top: 8px;
+}
+.middle .up .navigation .tishi .item{
+  width: 90px;
+  height: 100%;
+  text-align: center;
+  float: left;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+.middle .up .navigation .tishi .line{
+  background:#999999;
+  width:150px;
+  height:1px;
+  float: left;
+  margin-top: 38px;
+  margin-left: -20px;
+}
+
+
+
+.middle .down .information{
+  height: 620px;
+}
+/*同步公共代码结束*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+.middle .down .information label{
+  margin-left: 300px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#9b9b9b;
+}
+
+.middle .down .information .name input{
+  margin-top: 30px;
+  margin-left: 22px;
+  width: 400px;
+  height: 40px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
+.middle .down .information .password input{
+  margin-top: 20px;
+  margin-left: 22px;
+  width: 290px;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
+.middle .down .information .password .look{
+  width: 56px;
+  height: 16px;
+  margin-left: 120px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#9b9b9b;
+}
+
+.middle .down .information .password .replace{
+  width: 43px;
+  height: 16px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#2072d1;
+}
+
+.middle .down .information .submit{
+  width:58px;
+  height:32px;
+  margin-left: 359px;
+  margin-top: 20px;
+  background:#178c5b;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#ffffff;
+  border:none;
+  border-radius:4px;
+  outline: none;
+}
+
+
+

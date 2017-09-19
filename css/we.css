@@ -1,0 +1,126 @@
+/*头部二级背景*/
+.bg{
+  width: 100%;
+  height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+}
+.bg .bg-search{
+  background:#f2f8fc;
+  border-radius:4px;
+  width:746px;
+  height:60px;
+  margin-top: 50px;
+}
+.bg .bg-search input{
+  width: 681px;
+  height: 60px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  color: #9d9d9d;
+  border-right: 3px solid #b2b2b2;
+  float: left;
+  background-color: #f2f8fc;
+}
+.bg .bg-search .right{
+  width: 65px;
+  height: 60px;
+  background-color: #f2f8fc;
+  float: right;
+  background: url(../images/Shape.png) no-repeat center;
+}
+/*头部二级背景结束*/
+
+
+
+.weinfo{
+  overflow: hidden;
+}
+.weinfo .top-title{
+  margin-top: 50px;
+}
+.weinfo .top-title h1{
+  text-align: center;
+  font-family:MicrosoftYaHei;
+  font-size:28px;
+  color:rgba(51,51,51,0.92);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.weinfo .top-title p{
+  text-align: center;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(51,51,51,0.92);
+  line-height:30px;
+}
+.m-img{
+  width: 1152px;
+  margin:0 auto;
+  margin-top: 70px;
+  overflow: hidden;
+  margin-bottom: 65px;
+}
+.m-img img{
+  float: left;
+}
+/*提示信息*/
+.m-info {
+}
+.m-info .top-title{
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#444444;
+  text-align:center;
+}
+.m-info .m-items{
+  width: 1000px;
+  margin:0 auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  overflow: hidden;
+  text-align: center;
+}
+.m-info .m-items .item{
+  float: left;
+  width: 25%;
+}
+.m-info .m-items .item span{
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 14px;
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#444444;
+}
+.m-info .m-items .item h6{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#178c5b;
+}
+.b-tabs img{
+  display: block;
+  width: 100%;
+}
+
+
+/*百度地图容器样式*/
+#allmap{height:500px;width:100%;}
+#allmap-cuihu{height:500px;width:100%;}
+
+
+#allmap1{height:500px;width:100%;}
+#allmap2{height:500px;width:100%;}
+
+
+
+
+/* box tab选项卡样式*/
+.box{width:100%;margin:0px auto;}
+.tab_menu{width:100%;margin:0 auto;overflow: hidden;background-color:#333;}
+.tab_menu li{width:120px;float:left;height:80px;line-height:80px;text-align: center;border-bottom: 3px solid transparent;}
+.tab_menu li{color:#e0e0e0;font-size: 20px;}
+.tab_menu li.current{border-bottom: 3px solid #178c5b;color:#178c5b;}
+.tab_box .hide{display:none;}

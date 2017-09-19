@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>云南大学大型仪器平台</title>
+  <link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- 登录 -->
+  <form action="" id="loginform">
+    <div id="loginbox">
+      <div class="login-title">账号登录</div>
+      <input type="text" 
+             style="margin-top: 50px;margin-bottom: 8px;" 
+             data-required
+             data-description='nickname'
+             id="nickname" 
+             data-describedby='msg'
+             placeholder="用户名">
+             <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+      <input type="password"
+             data-required
+             data-description='pwd'
+             id="pwd"
+             data-describedby='pwdmsg'
+             placeholder="密码">
+             <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+      <a href="fillaccount.html"><span>忘记密码</span></a>
+      <button type="submit" id="loginbtn">登录</button>
+      <div class="xiaowai">
+        <a href="">统一身份认证</a>
+        <a href="notice.html" style="float: right;">校外用户注册</a>
+      </div>
+    </div>
+  </form>
+  <div class="index">
+      <!-- 头部登录 -->
+      <div class="header" id="backtop">    
+        <div class="w clearfix">
+          <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+          <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+          <div class="login">
+            <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+            <a href="notice.html" target="_blank">校外用户注册</a>
+          </div>
+        </div>
+      </div>
+      <!-- 主题内容开始 -->
+      <div class="container">
+        <!-- 平台成员导航 -->
+        <div class="topnav">
+          <ul class="w">
+            <li><a href="platforminfo.html">平台成员</a></li>
+            <li><a href="guizhang.html">规章制度</a></li>
+            <li><a href="kaifangyiqi.html">开放仪器</a></li>
+            <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+            <li><a href="wenda.html">问答咨询</a></li>
+            <li><a href="we.html">关于我们</a></li>
+          </ul>
+        </div>
+        <!-- 背景部分开始 -->
+        <!-- 背景搜索 -->
+        <div class="search">
+          <div class="title">
+            <p>云南大学</p>
+            <span>会泽百家 &nbsp;&nbsp;&nbsp;至公天下</span>
+          </div>    
+          <div class="sousuo w">
+            <input type="text" placeholder="仪器、测试项目、实验室名称、组织机构" />
+            <div class="right" id="btn"></div>
+          </div>
+        </div>
+        <!-- 开放平台成员 -->
+        <div class="platform w">
+          <div class="tubiao"><img src="images/iocn9.png" alt=""></div>
+          <p>开放平台成员</p>
+          <span>大量仪器可供选择，这里绝对能找到你所需要的一切。</span>
+          <div class="items">
+            <div class="item"><a href="fenxi.html"><img src="images/icon1.png" alt=""><span>分析中心(68台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon2.png" alt=""><span>微纳加工平台(14台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon3.png" alt=""><span>集成电路(78台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon4.png" alt=""><span>物理性能检测(30台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon5.png" alt=""><span>电子测量仪器(28台)</span></a></div>
+          </div>
+        </div>
+        <!-- 介绍下面的小图标 -->
+        <div class="look w">
+          <div class="items">
+            <div class="item"><a href="fenxi.html"><img src="images/icon6.png" alt=""><span>地球探测仪器(68台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon7.png" alt=""><span>大气探测平台(14台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon8.png" alt=""><span>医学诊断(78台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon2.png" alt=""><span>化工系测试平台(30台)</span></a></div>
+            <div class="item"><a href="fenxi.html"><img src="images/icon10.png" alt=""><span>中国经济社会数据中心(28台)</span></a></div>
+          </div>
+          <!-- <div class="lookmore w">查看更多</div> -->
+        </div>
+        <!-- 轮播图部分 -->
+        <div class="swiper">
+          <div class="w">
+            <p>正在使用设备</p>
+            <span>以下设备正在使用中，可到开放仪器中预约下一时段。</span>
+            <!-- 轮播图容器 -->
+            <div class="swiper-container w">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device1.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">120kV透射电子显微镜</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device2.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">液相色谱质谱联用仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device3.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">荧光定量PCR仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device4.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">液相色谱质谱联用仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device5.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">热量分析仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device1.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">实时PCR定量仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device2.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">荧光定量PCR仪</span>
+                </div>
+                <div class="swiper-slide">
+                  <a href="devicedetail.html" style="position: relative;"><img src="images/device3.png" alt="" class="swiper-slide"></a>
+                  <span style="position: absolute;font-size: 16px;bottom: 0px;background:rgba(0,0,0,.5);width:100%;">旋转流变仪</span>
+                </div>
+              </div> 
+            </div>
+                <div class="arrleft"><img src="images/arrleft.png" alt=""></div>
+                <div class="arrright"><img src="images/arrright.png" alt=""></div>
+          </div>
+        </div>
+      <!-- tab选项卡 -->
+      
+        <div class="box demo2">
+          
+            <ul class="tab_menu" style="margin-bottom: 5px;">
+              <li><a href="tongzhi.html">通知公告</a></li>
+              <li style="float: right;margin-right: 170px;"><a href="xiazai.html">常用下载</a></li>
+            </ul>
+          
+          <div class="tab_box">
+            <div>
+              <!-- 通告内容 -->
+              <div class="public w">
+                <div class="left">
+                  <div class="title">
+                    <p>分析中心核磁培训通知</p>
+                    <h3>日期:3月7日、14日、21日（周二）</h3>
+                    <h3>时间:下午13:30到17:00</h3>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="top">
+                    <div class="date">25</div>
+                    <div class="title">
+                      <p>实验室与设备处</p>
+                      <h6>关于开展实验室拍摄宣传的通知「学校」</h6>
+                    </div>
+                    <div class="content">
+                      <span>2017年10月</span>
+                      <p>为了让校内教职员工和学生更加全面深入了解云南大学教学科研工作和取得的成果，并向校外进行宣传和展示，实验室处拟与宣传部联合对我校特色显著、成果突出、展示度高的实验室进行宣传……</p>
+                    </div>
+                  </div>
+                  <div class="bottom">
+                    <div class="top">
+                    <div class="date">10</div>
+                    <div class="title">
+                      <p>实验室与设备处  云南大学生物医学测试中心  云南大学蛋白质研究技术中心</p>
+                      <h6>关于激光共聚焦及全自动玻片扫描系统培训的通知「学校」</h6>
+                    </div>
+                    <div class="content">
+                      <span>2017年10月</span>
+                      <p>为了让校内教职员工和学生更加全面深入了解云南大学教学科研工作和取得的成果，并向校外进行宣传和展示，实验室处拟与宣传部联合对我校特色显著、成果突出、展示度高的实验室进行宣传……</p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hide">
+              <div class="w">
+                <div class="list" style="height:355px;">                    
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>2015-2016学年实验室信息统计数据备份（按学院）</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>平面进场扫描测试系统</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>XFe96 Basic Procedures</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>EBSD样品制备基本要求</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>2015-2016学年实验室信息统计数据备份（按学院）</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>预约实验前请先确定样品</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>Auriqa FIB样品要求</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>XFe96 Basic Procedures</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="l-i-left">
+                      <p>2015-2016学年实验室信息统计数据备份（按学院）</p>
+                    </div>
+                    <div class="l-i-right">
+                      <span>「2017-02-02」</span>
+                      <span class="r">下载</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 仪器排行榜 -->
+        <div class="rank w">
+          <p style="padding-bottom: 14px;">仪器预约排行榜</p>
+          <img src="images/wave.png" alt="">
+          <span>热门预约仪器排行榜</span>
+          <!-- 图标排行 -->
+          <div class="iconrank w">
+            <div class="item">
+              <div class="logo"><img src="images/second.png" alt=""></div>
+              <p>透射电子显微镜</p>
+              <span>18928次</span>
+            </div>
+            <div class="item">
+              <div class="logo"><img src="images/first.png" alt=""></div>
+              <p>透射电子显微镜</p>
+              <span>18928次</span>
+            </div>
+            <div class="item">
+              <div class="logo"><img src="images/thrid.png" alt=""></div>
+              <p>透射电子显微镜</p>
+              <span>18928次</span>
+            </div>
+          </div>
+          <!-- 排行 -->
+          <div class="rankitem w">              
+              <div class="left">
+                <ul>
+                  <li>
+                    <span class="ranking r1">4</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                  <li>
+                    <span class="ranking r2">6</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                  <li>
+                    <span class="ranking r3">8</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                </ul>
+              </div>
+              <div class="left">
+                <ul>
+                  <li>
+                    <span class="ranking r1">5</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                  <li>
+                    <span class="ranking r2">7</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                  <li>
+                    <span class="ranking r3">9</span>
+                    <span>冷场发射扫描电子显微镜</span>
+                    <span class="cishu">110次</span>
+                    <img src="images/wave.png" alt="" class="wave">
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      <!-- 底部结尾 -->
+       <div class="footer w">
+            <div class="links w">
+              <a href="#">友情链接:</a>
+              <a href="#">采购信息网</a>
+              <a href="#">实验室</a>
+              <a href="#">资产</a>
+              <a href="#">大型仪器设备共享</a>
+              <a href="#">实验室安全考试培训</a>
+              <a href="#">国家网络管理平台</a>
+              <a href="#">云南省大仪网</a>
+              <a href="#">某某高校</a>
+            </div>
+            <div class="copyright">
+              <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+              <br/>
+              <span>首页访问次数:</span><span>1101次</span>
+            </div>
+            <!-- 回到顶部 -->
+            <div class="backtop">                
+              <a href="javascript:window.scrollTo(0,0);"><img src="images/top.png" alt=""></a>
+            </div>
+       </div>
+  </div>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="assets/layer/layer.js"></script>
+  <script src="js/swiper-3.4.2.min.js"></script>
+  <script src="assets/Validate-master/jquery-validate.min.js"></script>
+  <script src="assets/form-master/jquery.form.js"></script>
+  <script src="js/jquery.tabs.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.arrright',
+        prevButton: '.arrleft',
+        slidesPerView: 5,
+        centeredSlides: false
+    });
+    $(function(){        
+      // 通知公告切换
+      $('.demo2').Tabs({
+        timeout:0
+      });
+      // 点击搜索
+      $('#btn').on('click',function(){
+        window.location.href='devicelist.html';
+      });
+    });//;end $function
+     // 点击排行榜
+    $(function(){
+      $('.iconrank .item').on('click',function(){
+        window.location.href='mix.html';
+      })
+    });
+  </script>
+</body>
+</html>

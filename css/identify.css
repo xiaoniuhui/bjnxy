@@ -1,0 +1,119 @@
+.middle .up{
+  width: 100%;
+  height: 100px;
+  background-color: #F8FBFA;
+}
+
+.middle .down{
+  width: 100%;
+  height: 620px;
+  background-color: #F3F6F5;
+}
+
+.middle .up .navigation{
+  height: 100px;
+}
+
+.middle .down .information{
+  height: 620px;
+}
+
+/*字体图标*/
+.icon {
+   width: 24px; 
+   height: 24px;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+   margin-top: 25px;
+   color: red;
+}
+
+.middle .up .navigation .tishi{
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.middle .up .navigation .tishi span{
+  display: block;
+  margin-top: 8px;
+}
+.middle .up .navigation .tishi .item{
+  width: 90px;
+  height: 100%;
+  text-align: center;
+  float: left;
+  
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+.middle .up .navigation .tishi .line{
+  background:#999999;
+  width:150px;
+  height:1px;
+  float: left;
+  margin-top: 38px;
+  margin-left: -20px;
+}
+
+.middle .down .information {
+  overflow: hidden;
+}
+.middle .down .information label{
+  margin-left: 240px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#9b9b9b;
+  width: 120px;
+  display: inline-block;
+  text-align: right;
+}
+.middle .down .information .name {
+  margin-top: 30px;
+}
+.middle .down .information .name span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+/*绑定手机*/
+.middle .down .information .phoneNo{  
+  margin-top: 30px;
+}
+.middle .down .information .phoneNo span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.middle .down .information .phoneNo a{
+  font-family:MicrosoftYaHei;
+  margin-left: 10px;
+  font-size:12px;
+  color:#2072d1;
+}
+/*验证手机*/
+.middle .down .information .phone {
+  margin-top: 30px;
+}
+
+.middle .down .information .phone input{
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+  border-radius: 4px;
+}
+
+.middle .down .information .submit{
+  width:58px;
+  height:32px;
+  margin-left: 373px;
+  margin-top: 30px;
+  background:#178c5b;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#ffffff;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}

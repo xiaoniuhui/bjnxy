@@ -1,0 +1,210 @@
+/*头部二级背景*/
+.bg{
+  width: 100%;
+  height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+}
+.bg .bg-search{
+  background:#f2f8fc;
+  border-radius:4px;
+  width:746px;
+  height:60px;
+  margin-top: 50px;
+}
+.bg .bg-search input{
+  width: 681px;
+  height: 60px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  color: #9d9d9d;
+  border-right: 3px solid #b2b2b2;
+  float: left;
+  background-color: #f2f8fc;
+}
+.bg .bg-search .right{
+  width: 65px;
+  height: 60px;
+  background-color: #f2f8fc;
+  float: right;
+  background: url(../images/Shape.png) no-repeat center;
+}
+/*头部二级背景结束*/
+
+
+/*顶部面板导航*/
+.top-title{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f9f9f9;
+}
+.top-title .first{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#999999;
+}
+.top-title .se{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.top-title .last{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#178c5b;
+}
+/*左侧内容*/
+.fenxi{
+  overflow: hidden;
+}
+.fenxi .left-box{
+  float: left;
+  margin-top: 10px;
+}
+.fenxi .left-box .topinfo{
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;  
+  box-sizing: border-box;    
+  background-color: #f9f9f9;
+  color: #444;
+}
+.fenxi .left-box .jianjie{
+  width: 250px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.fenxi .left-box .jianjie .xuanzhong{
+  background-color: #178c5b;
+  color: #fff;
+}
+.fenxi .left-box .jianjie li{
+  /*padding-left: 20px;*/
+  border-bottom: 1px solid #eee;
+}
+.fenxi .left-box .jianjie li a{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color: #444;
+  display: block;
+  height: 39px;
+  padding-left: 20px;
+  line-height: 39px;
+}
+.fenxi .left-box .jianjie li ul li a:hover{
+  color:#178c5b;
+}
+.fenxi .left-box .jianjie li ul li{
+  border:none;
+}
+/*左侧内容结束*/
+
+/*右侧内容*/
+.fenxi .right-box{
+  width: 870px;
+  float: left;
+  margin-left: 40px;
+  margin-top: 28px;
+}
+/*公共导航*/
+.fenxi .right-box .top-nav{
+  overflow: hidden;
+}
+.fenxi .right-box .top-nav .left-border{
+  background:#178c5b;
+  width:2px;
+  height:20px;
+  float: left;
+}
+.fenxi .right-box .top-nav span{
+  float: left;
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#5e5e5e;
+  line-height: 1;
+  margin-left: 9px;
+}
+.fenxi .right-box .top-nav .right-border{
+  background:#9b9b9b;
+  width:760px;
+  height:1px;
+  float: right;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+/*公共导航结束*/
+
+
+
+
+
+/*分析文字*/
+.fenxi .right-box .fenxi-p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  line-height:26px;
+  margin-top: 34px;
+  margin-bottom: 30px;
+}
+/*设备分类盒子*/
+.fenxi .right-box .items{
+  width: 870px;
+  margin-top: 34px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+.fenxi .right-box .items .item{
+  border:1px solid #444444;
+  width:180px;
+  height:44px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  line-height:44px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*项目检测*/
+.fenxi .right-box .test{
+  margin-top: 34px;
+  margin-bottom: 50px;
+}
+.fenxi .right-box .test .list{
+  margin-bottom: 22px;
+}
+.fenxi .right-box .test p{
+  margin-left: 12px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  line-height:26px;
+}
+.fenxi .right-box .test span{
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  margin-left: 12px;
+  margin-right: 20px;
+}
+/*服务领域盒子*/

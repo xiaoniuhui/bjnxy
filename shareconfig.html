@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>共享设置</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/shareconfig.css">
+</head>
+<body>
+      <!-- 头部 -->
+      <div>
+        <div class="header" id="backtop">    
+          <div class="w clearfix">
+            <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+            <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+            <div class="login">
+              <a href="">工作台</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shareconfig">
+        <div class="left">
+          <div class="title"></div>
+        </div>
+        <div class="right">
+          <div class="deviceinfo" style="overflow: hidden;">
+            <h4>设备基本信息</h4>
+            <dl class="">
+              <dd>设备名称<span>液相色谱质谱联用仪</span></dd>
+              <dd>设备编号<span>TY2016000001</span></dd>
+              <dd>规格型号<span>Agilent  1200  HPLC-6310</span></dd>
+              <dd>&nbsp;&nbsp;&nbsp;&nbsp;联系人<span>刘俊</span></dd>
+            </dl>
+            <dl class="second">
+              <dd>存放地点<span>文渊楼A座208</span></dd>
+              <dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品牌<span>瓦里安</span></dd>
+              <dd>联系电话<span>010-62795xxx</span></dd>
+            </dl>
+          </div>
+          <!-- 规则命名及设置 -->
+          <div class="config">
+            <h4>设备基本信息</h4>
+            <form action="">
+              <label style="font-family:MicrosoftYaHei;font-size:14px;color:#9b9b9b;letter-spacing:0;"><span style="color: red;padding-left: 28px;padding-right: 10px;">*</span>规则名称：</label>
+              <input type="text">
+              <label for="" style="margin-left: 180px;font-family:MicrosoftYaHei;font-size:14px;color:#9b9b9b;letter-spacing:0;">是否启用</label>
+              <input type="radio" name="t" id="">是
+              <input type="radio" name="t" id="">否
+            </form>
+          </div>
+          <!-- 详细设置 -->
+          <div class="detail">
+            <h4>详细设置</h4>
+            <form action="" class="b">
+              <label for="">共享模式：</label>
+              <input type="radio">共享&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="radio">不共享
+              <input type="radio">已退役
+              <br/>
+              <label for="">共享级别：</label>
+              <input type="radio">校内共享
+              <input type="radio">校内外共享
+              <br/>
+              <label for="">预约模式：</label>
+              <input type="radio" style="margin-bottom: 0;">委托测试
+              <input type="radio" style="margin-bottom: 0;">自助上机
+            </form>
+          </div>
+          <!-- 用户要求设置 -->
+          <div class="user">
+            <h6>对用户要求</h6>
+            <form action="" class="b">
+              <label for="">用户级别要求</label>
+              <input type="checkbox" name="" id="">一级
+              <input type="checkbox" name="" id="">二级
+              <br/>
+              <label for="">用户类别</label>
+              <input type="checkbox" name="" id="">博士
+              <input type="checkbox" name="" id="">硕士             
+              <input type="checkbox" name="" id="">本科生             
+              <input type="checkbox" name="" id="">教职工             
+              <input type="checkbox" name="" id="">教职工校外用户
+              <br/>             
+              <label for="">特定课题组</label>
+              <select name="" id="">
+                <option value="">请选择</option>
+              </select>
+              <br/>             
+              <label for="">特定用户</label>
+              <select name="" id="">
+                <option value="">请选择</option>
+              </select>
+              <br/>             
+              <label for="">培训要求</label>
+              <select name="" id="" style="margin-bottom: 0;">
+                <option value="">请选择</option>
+              </select>
+            </form>
+          </div>
+          <!-- 时间要求 -->
+          <div class="time">
+            <h6>时间要求</h6>
+            <form action="" class="b">
+              <label for="">最小时间单位</label>
+              <input type="text">分钟<span>自助上机测试日历的最小时间</span>
+              <br/>
+              <label for="">开始时间</label>
+              <input type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>结束时间</span>
+              <br/>
+              <label for="">最少预约</label>
+              <input type="text">个&nbsp;&nbsp;&nbsp;&nbsp;<span>自助上机最少预约多长时间</span>
+              <br/>
+              <label for="">最多预约</label>
+              <input type="text">个&nbsp;&nbsp;&nbsp;&nbsp;<span>XXX</span>
+              <br/>
+              <label for="">最近可提前预约</label>
+              <input type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>XXX</span>
+              <br/>
+              <label for="">最远可提前预约</label>
+              <input type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>30天预售期</span>
+              <br/>
+              <label for="">一周内最多可预约</label>
+              <input type="text" style="margin-bottom: 0;">个&nbsp;&nbsp;&nbsp;&nbsp;<span>XXX</span>
+            </form>
+          </div>
+          <!-- 送样要求 -->
+          <div class="simple">
+            <h6>送样要求</h6>
+            <form action="" class="b">
+              <label for="">是否需要送样</label>
+              <input type="radio" name="tt" id="">是
+              <input type="radio" name="tt" id="">否<span>选择是，展示，选择否 ，前台</span>
+            </form>
+          </div>
+          <!-- 退改签要求 -->
+          <div class="change">
+            <h6>退改签要求</h6>
+            <form action="" class="b">
+              <label for="">是否允许取消</label>
+              <input type="radio" name="" id="">是
+              <input type="radio" name="" id="">否
+              <br/>
+              <label for="">最近取消时间</label>
+              <input type="text">分钟<span>XX天XX小时</span>
+              <br/>
+              <label for="">取消收费</label>
+              <input type="text">元
+              <br/>
+              <label for="">是否允许改签</label>
+              <input type="radio" name="" id="">是
+              <input type="radio" name="" id="">否
+              <br/>
+              <label for="">最近改签时间</label>
+              <input type="text">分钟<span>XX天XX小时</span>
+              <br/>
+              <label for="">改签后是否需要审核</label>
+              <input type="radio" name="" id="">是
+              <input type="radio" name="" id="">否
+              <br/>
+              <label for="">最多改签次数</label>
+              <input type="text" style="margin-bottom: 0;">次
+            </form>
+          </div>
+          <!--浏览权限要求 -->
+          <div class="check">
+            <h6>浏览权限要求</h6>
+            <form action="" class="b">
+              <label for="">联系人可见范围</label>
+              <input type="checkbox">游客&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox">校内用户
+              <input type="checkbox">校外用户
+              <br/>
+              <label for="">联系人方式可见范围</label>
+              <input type="checkbox">游客&nbsp;&nbsp;&nbsp;&nbsp;
+              <input type="checkbox">校内用户
+              <input type="checkbox">校外用户
+              <br/>
+              <label for="">预约人信息可见范围</label>
+              <input type="checkbox" style="margin-bottom: 0;">不可见&nbsp;
+              <input type="checkbox" style="margin-bottom: 0;">能见姓名
+            </form>
+          </div>
+          <!-- 可委托测试项目 -->
+          <div class="othertest">
+            <h6>可委托测试项目</h6>
+            <form action="" class="b">
+              <input type="checkbox" style="margin-bottom: 0;">
+              <label for="">项目A</label>
+              <br/>
+              <input type="checkbox" style="margin-bottom: 0;">
+              <label for="" style="margin-bottom: 0;">项目B</label>
+            </form>
+          </div>
+          <!-- 周期设置 -->
+          <div class="period">
+            <h6>周期设置</h6>
+            <form action="" class="b">
+              <input type="checkbox" style="margin-bottom: 0;">
+              <label for="">按校历</label>
+              <br/>
+              <input type="checkbox" style="margin-bottom: 0;">
+              <label for="" style="margin-bottom: 0;">按日</label>
+              从<input type="text" class="ddate">～<input type="text" class="ddate">天
+              <br><br>
+              <input type="checkbox" style="">
+              <label for="">按工作日</label>
+              <br>
+              <input type="checkbox" style="">
+              <label for="">按周</label>
+              <br>
+              <!-- 开始 -->
+              <div class="start">
+                开始<input type="text" class="startin" placeholder="2017-07-18"><input type="text" class="startt" placeholder="09:09">
+              </div>
+              <!-- 结束 -->
+              <div class="start">
+                结束<input type="text" class="startin" placeholder="2017-07-18"><input type="text" class="startt" placeholder="09:09">
+              </div>
+              <!-- 每隔几周 -->
+              <div class="start">
+                每隔<input type="text" class="startw">周
+              </div>
+              
+              <!-- 复制按月 -->
+              <input type="checkbox" style="">
+              <label for="">按月</label>
+              <br>
+              <!-- 开始 -->
+              <div class="start">
+                开始<input type="text" class="startin" placeholder="2017-07-18"><input type="text" class="startt" placeholder="09:09">
+              </div>
+              <!-- 结束 -->
+              <div class="start">
+                结束<input type="text" class="startin" placeholder="2017-07-18"><input type="text" class="startt" placeholder="09:09">
+              </div>
+              <!-- 月 -->
+              <div class="start">
+                月<input type="text" style="margin-left: 23px;border-color: #ccc;width: 288px;">
+              </div>
+
+            </form>
+          </div>
+
+
+
+          <!-- 周期设置暂不提供 -->
+
+          <!--发布按钮  -->
+          <div class="btn">发布</div>
+          
+
+
+
+
+        </div>
+      </div>        
+</body>
+</html>

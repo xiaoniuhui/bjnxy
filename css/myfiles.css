@@ -1,0 +1,107 @@
+body{
+  font-family:MicrosoftYaHei;
+  background:#f3f6f5;
+}
+.bg{
+  width: 100%;
+  height: 160px;
+  line-height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+  font-size:28px;
+  color:#ffffff;
+  text-align:center;
+}
+/*顶部面板导航*/
+.top-title{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f9f9f9;
+}
+.top-title .first{
+  font-size:14px;
+  color:#999999;
+}
+.top-title .last{
+  font-size:14px;
+  color:#178c5b;
+}
+/*公共部分结束*/
+
+.files-cont{
+  position: relative;
+  padding-top: 20px;
+}
+/*左侧内容*/
+.current{
+  color: #178c5b !important;
+}
+.files-cont .left{
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 120px;
+}
+.files-cont .left dl{
+  font-size:16px;
+  color:#444444;
+  text-align:left;
+  margin-bottom: 12px;
+}
+.files-cont .left dd a{
+  font-size:14px;
+  color:#999999;
+  text-align:left;
+  line-height: 1;
+  padding-bottom: 12px;
+  display: block;
+}
+.files-cont .left dd a:hover{
+  cursor: pointer;
+  color: #178c5b;
+}
+/*右侧内容*/
+.files-cont .right{
+  margin-left: 120px;
+  background-color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  height: 500px;
+  margin-bottom: 40px;
+}
+/*顶部样式*/
+.files-cont .right .top-search{
+  height: 62px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #178c5b;
+}
+.files-cont .right .l-wenda{
+  font-size:14px;
+  padding-left: 10px;
+  line-height: 1;  
+  color:#666666;
+  text-align:left;
+  border-left: 2px solid #178c5b;
+  margin-top: 30px;
+  float: left;
+}
+
+/*个人档案样式*/
+.files-cont .right .personinfo{
+  margin-top: 20px;
+}
+.files-cont .right .personinfo li{
+  line-height: 40px;
+}
+.files-cont .right .personinfo span.l{
+  width: 100px;
+  display: inline-block;;
+  font-size:14px;
+  color:#999999;
+}
+.files-cont .right .personinfo span.r{
+  font-size:14px;
+  color:#444444;
+}

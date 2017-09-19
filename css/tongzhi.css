@@ -1,0 +1,271 @@
+/*头部二级背景*/
+.bg{
+  width: 100%;
+  height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+}
+.bg .bg-search{
+  background:#f2f8fc;
+  border-radius:4px;
+  width:746px;
+  height:60px;
+  margin-top: 50px;
+}
+.bg .bg-search input{
+  width: 681px;
+  height: 60px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  font-family: MicrosoftYaHei;
+  font-size: 18px;
+  color: #9d9d9d;
+  border-right: 3px solid #b2b2b2;
+  float: left;
+  background-color: #f2f8fc;
+}
+.bg .bg-search .right{
+  width: 65px;
+  height: 60px;
+  background-color: #f2f8fc;
+  float: right;
+  background: url(../images/Shape.png) no-repeat center;
+}
+/*头部二级背景结束*/
+
+/*顶部面板导航*/
+.top-title{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f9f9f9;
+}
+.top-title .first{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#999999;
+}
+.top-title .se{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.top-title .last{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#178c5b;
+}
+.ziliao{
+  overflow: hidden;
+}
+/*右侧内容*/
+.ziliao .right-box{
+  width: 1180px;
+  margin-top: 28px;
+}
+/*公共导航*/
+.ziliao .right-box .top-nav{
+  overflow: hidden;
+}
+.ziliao .right-box .top-nav .left-border{
+  background:#178c5b;
+  width:2px;
+  height:20px;
+  float: left;
+}
+.ziliao .right-box .top-nav span{
+  float: left;
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#5e5e5e;
+  line-height: 1;
+  margin-left: 9px;
+}
+.ziliao .right-box .top-nav .right-border{
+  background:#9b9b9b;
+  width:1060px;
+  height:1px;
+  float: right;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+/*公共导航结束*/
+
+/*公共搜索*/
+.top-search {
+  background:#f9f9f9;
+  width:100%;
+  height:60px;
+  margin-top: 24px;
+  overflow: hidden;
+}
+.top-search .t-s-left{
+  line-height: 28px;
+  float: left;
+  margin-left: 20px;
+  margin-top: 16px;
+}
+.top-search .t-s-left span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#2072d1;
+}
+
+.top-search .t-s-right{
+  background-color: green;
+  float: right;
+  margin-right: 25px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+.top-search .t-s-right input{
+  width: 166px;
+  height: 28px;
+  float: left;
+  font-family:MicrosoftYaHei;
+  font-size:12px;  
+  padding-left: 10px;
+}
+.top-search .t-s-right input::-webkit-input-placeholder{
+  color:#cbcbcb;
+}
+.top-search .t-s-right input::-ms-input-placeholder{
+  color:#cbcbcb;
+}
+.top-search .t-s-right input::-moz-input-placeholder{
+  color:#cbcbcb;
+}
+.top-search .t-s-right .btn{
+  width: 38px;
+  height: 28px;
+  line-height: 28px;
+  background-color: #777;
+  float: left;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+  text-align: center;
+}
+/*公共搜索结束*/
+
+
+
+
+
+
+
+/*内容列表*/
+.ziliao .right-box .list{
+  margin-top: 10px;
+
+}
+.ziliao .right-box .list .item{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #efefef;
+  overflow: hidden;
+}
+.ziliao .right-box .list .l-i-left{
+  width: 500px;
+  height: 100%;
+  float: left;
+}
+.ziliao .right-box .list .l-i-left p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  margin-left: 25px;
+}
+.ziliao .right-box .list .l-i-right{
+  width: 110px;
+  height: 100%;
+  float: right;
+  margin-right: 20px;
+}
+.ziliao .right-box .list .l-i-right span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+.ziliao .right-box .list .l-i-right span.r{
+  float: right;
+}
+
+
+
+
+/*分页按钮组公共样式*/
+ .pagebtn{
+  width: 100%;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+  padding: 30px  0;
+  overflow: hidden;
+}
+ .pagebtn .rr{
+  float: right;
+  margin-right: 10px;
+}
+
+ .pagebtn .arrbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+ .pagebtn .btnbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:30px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+ .pagebtn .total{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+ .pagebtn .next{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+ .pagebtn input{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;  
+  margin-right: 10px;    
+}
+ .pagebtn .btn{
+  background:#178c5b;
+  border-radius:2px;
+  width:54px;
+  height:32px;
+  line-height: 32px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+}
+/*分页按钮组公共样式结束*/

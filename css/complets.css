@@ -1,0 +1,96 @@
+.middle .up{
+  width: 100%;
+  height: 100px;
+  background-color: #F8FBFA;
+}
+
+.middle .down{
+  width: 100%;
+  height: 620px;
+  background-color: #F3F6F5;
+}
+
+.middle .up .navigation{
+  height: 100px;
+}
+
+.middle .down .information{
+  height: 620px;
+}
+
+.middle .down .information img{
+  width: 32px;
+  height: 32px;
+  margin-top: 49px;
+  margin-left: 449px;
+  
+}
+
+.middle .down .information .mark{
+  position: relative;
+}
+
+.middle .down .information .mark .set{
+  position: absolute;
+  top: 52px;
+  left:500px;
+  font-family:MicrosoftYaHei;
+  font-size:18px;
+  color:#178c5b;
+}
+
+.middle .down .information .mark .shuoming{
+  position: absolute;
+  top: 84px;
+  left:497px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#9b9b9b;
+}
+
+.middle .down .information .mark .return{
+  position: absolute;
+  top: 84px;
+  left:657px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#2072d1;
+}
+
+/*字体图标*/
+.icon {
+   width: 24px; 
+   height: 24px;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+   margin-top: 25px;
+   color: red;
+}
+
+.middle .up .navigation .tishi{
+  width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.middle .up .navigation .tishi span{
+  display: block;
+  margin-top: 8px;
+}
+.middle .up .navigation .tishi .item{
+  width: 90px;
+  height: 100%;
+  text-align: center;
+  float: left;
+  padding-top: 25px;
+  box-sizing: border-box;
+}
+.middle .up .navigation .tishi .line{
+  background:#999999;
+  width:150px;
+  height:1px;
+  float: left;
+  margin-top: 38px;
+  margin-left: -20px;
+}

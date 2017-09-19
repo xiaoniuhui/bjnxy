@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <!-- <style>
+    .t-base-info{
+      width: 960px;
+      height: 530px;      
+      font-family:MicrosoftYaHei;
+    }
+    .t-base-info .xian{
+      background:#dddddd;
+      width:960px;
+      height:1px;
+      margin-top: 30px;
+    }
+    .t-base-info .title{
+      font-size:16px;
+      line-height: 50px;
+      color:#ffffff;
+      text-align:center;
+      background:#178c5b;
+      width:960px;
+      height:50px;
+      margin-bottom: 30px;
+    }
+    .t-base-info .form-item{
+      margin-bottom: 15px;
+    }
+    .t-base-info .form-item label{
+      font-size:14px;
+      color:#444444;
+      text-align:left;
+      margin-left: 30px;
+      width: 56px;
+      display: inline-block;
+    }
+    .t-base-info .form-item input{
+      background:#ffffff;
+      border:1px solid #ebebeb;
+      border-radius:2px;
+      width:372px;
+      height:40px;
+    }
+    .t-base-info .form-item input.xueke{
+      background:#ffffff;
+      border:1px solid #ebebeb;
+      border-radius:2px;
+      width:840px;
+      height:40px;
+    }
+    .t-base-info .form-item input.shuoming{
+      background:#ffffff;
+      border:1px solid #ebebeb;
+      border-radius:2px;
+      width:840px;
+      height:82px;
+    }
+    .t-base-info .btngroup{
+      height: 50px;
+      line-height: 50px;
+    }
+    .t-base-info .btngroup span{
+      padding:  8px 0;
+      padding-right: 50px;
+      margin-left: 50px;
+      cursor: pointer;
+    }
+    .t-base-info .btngroup span.f{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#777777;
+      text-align:center;
+      border-right: 1px solid #eaeaea;
+    }
+    .t-base-info .btngroup span.s{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#178c5b;
+      text-align:center;
+    }
+  </style> -->
+  <style>
+    .xzkc{
+      width: 498px;
+      height: 360px;
+      text-align: center;      
+    }
+    .xzkc li{
+      list-style: none;
+      line-height: 1;
+      padding: 15px 0;
+    }
+    .xzkc li input{
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      margin-right: 20px;
+      margin-top:-2px;
+      margin-bottom:1px
+    }
+    .xzkc .title{
+      background:#178c5b;
+      width:498px;
+      height:50px;
+      line-height: 50px;
+      font-size:16px;
+      color:#ffffff;
+      text-align:center;
+    }
+    .xzkc .title-cont{
+      background:#fbfbfb;
+      border-bottom: 1px solid #ddd;
+      height:260px;
+      padding-top: 40px;
+      box-sizing: border-box;
+      color: #444;
+    }
+    /*按钮组样式*/
+    .xzkc .btngroup{
+      height: 50px;
+      line-height: 50px;
+    }
+    .xzkc .btngroup span{
+      padding:  8px 0;
+      padding-right: 50px;
+      margin-left: 50px;
+      cursor: pointer;
+    }
+    .xzkc .btngroup span.f{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#777777;
+      text-align:center;
+      border-right: 1px solid #eaeaea;
+    }
+    .xzkc .btngroup span.s{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#178c5b;
+      text-align:center;
+    }
+  </style>
+  <style>
+    .baseinfo-cont{
+      background:#fbfbfb;
+      border-radius:4px;
+      width:498px;
+      height:461px;
+    }
+    .baseinfo-cont .title{
+      font-size:16px;
+      color:#ffffff;
+      text-align:center;
+      background:#178c5b;
+      width:498px;
+      height:50px;
+      line-height: 50px;
+      margin-bottom: 30px;
+    }
+    .baseinfo-cont .baseinfo-item{
+      width: 438px;
+      margin: 0 auto;
+      border-bottom: 1px solid #f1f1f1;
+      overflow: hidden;
+      padding-bottom: 15px;
+      margin-top: 15px;
+    }
+    .baseinfo-cont .baseinfo-item .top-info{
+      font-size:14px;
+      color:#444444;
+      text-align:left;
+      margin-bottom: 20px;
+    }
+    .baseinfo-cont .baseinfo-item .base-l{
+      float: left;
+      width: 50%;
+    }
+    .baseinfo-cont .baseinfo-item .base-r{
+      float: left;
+      width: 50%;
+    }
+    .baseinfo-cont .baseinfo-item span.l{      
+      font-size:14px;
+      color:#999999;
+      width: 70px;
+      height: 16px;
+      padding: 12px 0;
+      line-height: 1;
+      display: inline-block;
+    }
+    .baseinfo-cont .baseinfo-item span.r{
+      font-size:14px;
+      color:#444444;
+      width: 130px;
+      height: 16px;
+      padding: 12px 0;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    /*按钮组样式*/
+    .baseinfo-cont .btngroup{
+      height: 50px;
+      line-height: 50px;
+    }
+    .baseinfo-cont .btngroup span{
+      padding:  8px 0;
+      padding-right: 50px;
+      margin-left: 50px;
+      cursor: pointer;
+    }
+    .baseinfo-cont .btngroup span.f{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#777777;
+      text-align:center;
+      border-right: 1px solid #eaeaea;
+    }
+    .baseinfo-cont .btngroup span.s{
+      font-family:MicrosoftYaHei;
+      font-size:14px;
+      color:#178c5b;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div class="t-base-info">
+    <div class="title">基本信息</div>
+    <div class="form-item">
+      <label for="">课题名称</label>
+      <input type="text">
+      <label for="">助记符</label>
+      <input type="text">
+    </div>
+    <div class="form-item">
+      <label for="">负责人</label>
+      <input type="text">
+      <label for="">当前状态</label>
+      <input type="text">
+    </div>
+    <div class="form-item">
+      <label for="">创建时间</label>
+      <input type="text">
+      <label for="">结束时间</label>
+      <input type="text">
+    </div>
+    <div class="form-item">
+      <label for="">联系方式</label>
+      <input type="text">
+      <label for="">编号</label>
+      <input type="text">
+    </div>
+    <div class="form-item">
+      <label for="">所属学科</label>
+      <input type="text" class="xueke">
+    </div>
+    <div class="form-item">
+      <label for="">说明</label>
+      <input type="text" class="shuoming">
+    </div>
+    <div class="xian"></div>
+    <div class="btngroup">
+      <div style="float: right;">
+        <span class="f">取消</span>
+        <span class="s">提交</span>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="xzkc">
+    <div class="title">申请培训</div>
+    <div class="title-cont">
+      <li>选择培训课程</li>
+      <li><input type="radio" name="type" id="">生物制剂</li>
+      <li><input type="radio" name="type" id="">化学检测</li>
+      <li><input type="radio" name="type" id="">药物分析</li>
+    </div>
+    <div class="btngroup">
+      <div style="float: right;">
+        <span class="f">取消</span>
+        <span class="s" id="s-next">下一步</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="baseinfo-cont">
+    <div class="title">申请培训</div>
+    <div class="baseinfo-item">
+      <div class="top-info">课程信息</div>
+      <div class="base-l">
+        <span class="l">培训课程：</span>
+        <span class="r">化学检测</span>
+      </div>
+      <div class="base-r">
+        <span class="l">课题名称：</span>
+        <span class="r">分析中心101室</span>
+      </div>
+    </div>
+    <div class="baseinfo-item">
+      <div class="top-info">设备信息</div>
+      <div class="base-l">
+        <span class="l">培训编号：</span>
+        <span class="r">TY2016000001</span>
+        <span class="l">规格型号：</span>
+        <span class="r">Agilent 1200</span>
+      </div>
+      <div class="base-r">
+        <span class="l">设备名称：</span>
+        <span class="r">液相色谱质谱联用仪</span>
+        <span class="l">存放地点：</span>
+        <span class="r">分析中心101室</span>
+      </div>
+    </div>
+    <div class="baseinfo-item">
+      <div class="top-info">人员信息</div>
+      <div class="base-l">
+        <span class="l">申请人：</span>
+        <span class="r">张三</span>
+        <span class="l">申请时间：</span>
+        <span class="r">2017-08-09</span>
+        <span class="l">联系电话：</span>
+        <span class="r">01254789</span>
+      </div>
+      <div class="base-r">
+        <span class="l">身份信息：</span>
+        <span class="r">本科生</span>
+        <span class="l">电子邮件：</span>
+        <span class="r">1234567@qq.com</span>
+      </div>
+    </div>
+    <div class="btngroup">
+      <div style="float: right;">
+        <span class="f">取消</span>
+        <span class="s">提交</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

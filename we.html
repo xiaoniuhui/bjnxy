@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>关于我们</title>  
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/we.css">
+ <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=PkUezjUoaFnwdhgGrefx3XpxjilIKRHO"></script>
+  <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+  <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+</head>
+<body>
+    <!-- 登录 -->
+    <form action="" id="loginform">
+      <div id="loginbox">
+        <div class="login-title">账号登录</div>
+        <input type="text" 
+               style="margin-top: 50px;margin-bottom: 8px;" 
+               data-required
+               data-description='nickname'
+               id="nickname" 
+               data-describedby='msg'
+               placeholder="用户名">
+               <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+        <input type="password"
+               data-required
+               data-description='pwd'
+               id="pwd"
+               data-describedby='pwdmsg'
+               placeholder="密码">
+               <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+        <a href="fillaccount.html"><span>忘记密码</span></a>
+        <button type="submit" id="loginbtn">登录</button>
+        <div class="xiaowai">
+          <a href="">统一身份认证</a>
+          <a href="notice.html" style="float: right;">校外用户注册</a>
+        </div>
+      </div>
+    </form>
+    <!-- 头部 -->
+    <div class="header">    
+            <div class="w clearfix">
+              <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+              <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+              <div class="login">
+               <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+               <a href="notice.html" class="nihao">校外用户注册</a>
+               <a href="index.html">系统首页</a>
+              </div>
+            </div>
+    </div>
+    <!-- 平台成员导航 -->
+    <div class="topnav">
+      <ul class="w">
+        <li><a href="platforminfo.html">平台成员</a></li>
+        <li><a href="guizhang.html">规章制度</a></li>
+        <li><a href="kaifangyiqi.html">开放仪器</a></li>
+        <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+        <li><a href="wenda.html">问答咨询</a></li>
+        <li><a href="we.html">关于我们</a></li>
+      </ul>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 背景搜索 -->
+    <div class="bg"></div>
+    <!-- 背景搜索结束 -->
+    <div class="weinfo w">
+      <!-- 关于我们 -->
+      <div class="top-title">
+        <h1>关于我们</h1>
+        <p>云南大学大型仪器共享平台，是适应社会发展需要的，共享共赢的一个支撑系统。</p>
+        <p>目前平台架构功能已初步实现，各项共享服务交流程已处于使用阶段，请各大型仪器所在单位抓紧完善设备信息，</p>
+        <p>试用平台各项功能，及时反馈意见和建议给我们，以便尽快完善平台预期的功能，尽早应用共享平台。谢谢！</p>
+      </div>
+      <!-- 关于我们结束 --> 
+    </div>
+    <!-- 背景地图 -->
+    <div class="m-img">
+      <img src="images/tu1.png" alt="">
+      <img src="images/tu2.png" alt="">
+      <img src="images/tu3.png" alt="">
+      <img src="images/tu4.png" alt="">
+    </div>
+    <!-- 提示信息 -->
+    <div class="m-info">
+      <div class="top-title">云南大学大型仪器设备共享平台</div>
+      <div class="m-items">
+        <div class="item">
+          <img src="images/fax.png" alt="">
+          <span>传真</span>
+          <h6>0871-65031141</h6>
+        </div>
+        <div class="item">
+          <img src="images/call.png" alt="">
+          <span>电话号码</span>
+          <h6>0871-65031141</h6>
+        </div>
+        <div class="item">
+          <img src="images/dizhi.png" alt="">
+          <span>单位地址</span>
+          <h6>云南省昆明市五华区翠湖北路2号</h6>
+        </div>
+        <div class="item">
+          <img src="images/post.png" alt="">
+          <span>邮政编码</span>
+          <h6>650091</h6>
+        </div>
+      </div>      
+    </div>
+    <div class="b-tabs">
+      <div class="box demo2">
+        <ul class="tab_menu">
+          <div class="w">
+            <li class="current" style="float: left;margin-left: 100px;">呈贡校区</li>
+            <li style="float: right;margin-right: 100px;">东陆校区</li>
+          </div>
+        </ul>
+        <div class="tab_box">
+          <div id="map1_container"><div id="allmap1"></div></div>
+          <div id="map2_container" class="hide"><div id="allmap2"></div></div>
+          
+
+
+          <!-- <div id="allmap"></div>          
+          <div class="hide">
+            <div id="allmap-cuihu"></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+  <!-- 底部 -->
+  <div class="footer w">
+    <div class="links w">
+      <a href="#">友情链接:</a>
+      <a href="#">采购信息网</a>
+      <a href="#">实验室</a>
+      <a href="#">资产</a>
+      <a href="#">大型仪器设备共享</a>
+      <a href="#">实验室安全考试培训</a>
+      <a href="#">国家网络管理平台</a>
+      <a href="#">云南省大仪网</a>
+      <a href="#">某某高校</a>
+    </div>
+    <div class="copyright">
+      <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+      <br/>
+      <span>首页访问次数</span><span>1101次</span>
+    </div>
+  </div>
+  <!-- 底部结束 -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="assets/layer/layer.js"></script>
+  <script src="assets/Validate-master/jquery-validate.min.js"></script>
+  <script src="assets/form-master/jquery.form.js"></script>
+  <script src="js/jquery.tabs.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    // 通知公告切换
+    $('.demo2').Tabs({
+      timeout:300
+    });    
+  </script>
+  <script type="text/javascript">
+      // 百度地图API功能
+      // var map = new BMap.Map('allmap');
+      // // 102.857014,24.833153 呈贡校区
+      // // 102.708574,25.060198东陆校区
+      // var poi = new BMap.Point(102.857014,24.833153);
+      // map.centerAndZoom(poi, 16);
+      // map.enableScrollWheelZoom();
+      // var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
+      //                 '地址：理工楼D102室' +
+      //               '</div>';
+
+      // //创建检索信息窗口对象
+      // var searchInfoWindow = null;
+      // searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+      //   title  : "云南大学呈贡校区",      //标题
+      //   width  : 290,             //宽度
+      //   height : 105,              //高度
+      //   panel  : "panel",         //检索结果面板
+      //   enableAutoPan : true,     //自动平移
+      //   searchTypes   :[
+      //     BMAPLIB_TAB_SEARCH,   //周边检索
+      //     BMAPLIB_TAB_TO_HERE,  //到这里去
+      //     BMAPLIB_TAB_FROM_HERE //从这里出发
+      //   ]
+      // });
+      // var marker = new BMap.Marker(poi); //创建marker对象
+      // marker.enableDragging(); //marker可拖拽
+      // marker.addEventListener("click", function(e){
+      //   searchInfoWindow.open(marker);
+      // })
+      // map.addOverlay(marker); //在地图中添加marker
+      // searchInfoWindow.open(marker);//默认显示检索信息
+  </script>
+  <script>
+    //百度地图API功能
+    //加载第一张地图
+    var map1 = new BMap.Map("allmap1");            // 创建Map实例
+    var point1 = new BMap.Point(102.857014,24.833153);  
+    map1.centerAndZoom(point1,15);               
+    // map1.enableScrollWheelZoom();                  //启用滚轮放大缩小
+    var marker = new BMap.Marker(point1);  // 创建标注
+    map1.addOverlay(marker);
+    //加载第二张地图
+    var map2 = new BMap.Map("allmap2");            // 创建Map实例
+    var point2 = new BMap.Point(102.708574,25.060198); 
+    map2.centerAndZoom(point2,15);                 
+    // map2.enableScrollWheelZoom();                  //启用滚轮放大缩小
+    var marker2 = new BMap.Marker(point2);  // 创建标注
+    map2.addOverlay(marker2);
+  </script>
+</body>
+</html>

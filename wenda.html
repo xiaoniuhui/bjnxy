@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>问答咨询</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/wenda.css">
+</head>
+<body>
+    <!-- 登录 -->
+    <form action="" id="loginform">
+      <div id="loginbox">
+        <div class="login-title">账号登录</div>
+        <input type="text" 
+               style="margin-top: 50px;margin-bottom: 8px;" 
+               data-required
+               data-description='nickname'
+               id="nickname" 
+               data-describedby='msg'
+               placeholder="用户名">
+               <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+        <input type="password"
+               data-required
+               data-description='pwd'
+               id="pwd"
+               data-describedby='pwdmsg'
+               placeholder="密码">
+               <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+        <a href="fillaccount.html"><span>忘记密码</span></a>
+        <button type="submit" id="loginbtn">登录</button>
+        <div class="xiaowai">
+          <a href="">统一身份认证</a>
+          <a href="notice.html" style="float: right;">校外用户注册</a>
+        </div>
+      </div>
+    </form>
+    <!-- 头部 -->    
+    <div class="header">    
+      <div class="w clearfix">
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+        <div class="login">
+          <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+          <a href="notice.html" class="nihao">校外用户注册</a>
+          <a href="index.html">系统首页</a>
+        </div>
+      </div>
+    </div>
+    <!-- 平台成员导航 -->
+    <div class="topnav">
+      <ul class="w">
+        <li><a href="platforminfo.html">平台成员</a></li>
+        <li><a href="guizhang.html">规章制度</a></li>
+        <li><a href="kaifangyiqi.html">开放仪器</a></li>
+        <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+        <li><a href="wenda.html">问答咨询</a></li>
+        <li><a href="we.html">关于我们</a></li>
+      </ul>
+    </div>
+    <!-- 头部结束 -->
+    <!-- 背景搜索 -->
+    <div class="bg"></div>
+    <!-- 背景搜索结束 -->
+    <!-- 通屏头部导航 -->
+    <div class="top-title">
+      <div class="w">
+        <a href="index.html" class="first">首页 > </a>
+        <a href="javascript:void(0)" class="last"> 问答咨询 </a>
+      </div>
+    </div>
+  <!-- 通屏头部导航结束 -->
+
+  <!-- 中间内容开始 -->  
+  <div class="w wenda">
+    <div class="left-box">
+      <div class="topinfo">我要咨询</div>
+      <div class="zixun">
+        <div class="title">我要咨询</div>
+        <form action="">
+          <input type="text" class="biaoti" placeholder="标题：写下你的问题">
+          <textarea class="xuantian" placeholder="选填，详细说明您的问题，以便获得更好的答案"></textarea>
+          <input type="checkbox" name="" id="" style="vertical-align: middle;width:14px;height: 14px;margin-left:32px;margin-top: 28px;margin-bottom: 26px">
+          <label for="">有回答，短信通知我</label>
+        </form>
+        <div class="xian"></div>
+        <div class="btngroup">
+          <div style="float: right;">
+            <span class="f">取消</span>
+            <span class="s">提交</span>
+          </div>
+        </div>
+      </div>
+      <div class="jianjie">
+       <ul>
+        
+       </ul>
+      </div>
+    </div>
+    <div class="right-box">
+      <!-- 公共搜索 -->
+      <!-- 公共搜索结束 -->
+      <!-- 公共导航 -->
+      <div class="top-nav">
+        <div class="left-border"></div>
+        <span>热门咨询</span>
+        <div class="right-border"></div>
+        <a href="remenzixun.html">更多 > </a>
+      </div>
+      <!-- 公共导航结束 -->
+
+      
+      <!-- 内容列表 -->
+      <div class="list">
+        <div class="item">
+          <div class="l-i-left">
+            <p>药物平台小分子化合物库开发使用</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>静态容量法比表面及孔径分析仪的应用技术- - - 讲座</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学电子顺磁共振室暑期放假通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>300M核磁开放杂核和变温测试通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>400M核磁代氯仿不能均场的通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学分析中心- -北京电子能谱中心暑期测试安排</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学电子顺磁共振室暑期放假通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div> 
+      </div>
+    
+      <!-- 公共导航 等你回答-->
+      <div class="top-nav" style="margin-top: 30px;">
+        <div class="left-border"></div>
+        <span>等你来回答</span>
+        <div class="right-border" style="width: 680px;"></div>
+        <a href="dengni.html">更多 > </a>
+      </div>
+      <!-- 公共导航结束 -->
+      <!-- 内容列表 -->
+      <div class="list">
+        <div class="item">
+          <div class="l-i-left">
+            <p>药物平台小分子化合物库开发使用</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>静态容量法比表面及孔径分析仪的应用技术- - - 讲座</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学电子顺磁共振室暑期放假通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>300M核磁开放杂核和变温测试通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>400M核磁代氯仿不能均场的通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学分析中心- -北京电子能谱中心暑期测试安排</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div>
+        <div class="item">
+          <div class="l-i-left">
+            <p>云南大学电子顺磁共振室暑期放假通知</p>
+          </div>
+          <div class="l-i-right">
+            <span class="r">「2017-02-02」</span>
+          </div>
+        </div> 
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+      <!-- 内容列表结束 -->
+
+    </div>  <!-- right-box结束 -->
+  </div>
+  <!-- 中间内容结束 -->
+
+
+
+
+  <!-- 底部 -->
+  <div class="footer w">
+    <div class="links w">
+      <a href="#">友情链接:</a>
+      <a href="#">采购信息网</a>
+      <a href="#">实验室</a>
+      <a href="#">资产</a>
+      <a href="#">大型仪器设备共享</a>
+      <a href="#">实验室安全考试培训</a>
+      <a href="#">国家网络管理平台</a>
+      <a href="#">云南省大仪网</a>
+      <a href="#">某某高校</a>
+    </div>
+    <div class="copyright">
+      <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+      <br/>
+      <span>首页访问次数</span><span>1101次</span>
+    </div>
+  </div>
+  <!-- 底部结束 -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="assets/layer/layer.js"></script>
+  <script src="assets/Validate-master/jquery-validate.min.js"></script>
+  <script src="assets/form-master/jquery.form.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    $(function(){
+      // 我要咨询案件
+      $('.topinfo').on('click',function(){
+        layer.open({
+          type: 1,
+          title: false,
+          closeBtn: 1,
+          shadeClose: false,
+          area: ['658px', '390px'],
+          shade: [0.5,"black"],
+          content:$('.zixun')
+        });
+      });
+      $('.wenda .zixun span.f').on('click',function(){
+        layer.closeAll();//关闭弹窗
+      });
+    });
+  </script>
+</body>
+</html>

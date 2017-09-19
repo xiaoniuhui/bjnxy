@@ -1,0 +1,406 @@
+
+.shareconfig{
+  width: 1180px;
+  height: 2000px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+/*左侧容器*/
+.shareconfig .left{
+  width: 208px;
+  height: 2320px;
+  background-color: #f9f9f9;
+  float: left;
+}
+.shareconfig .left .title{
+  width: 100%;
+  height: 46px;
+  background-color: #e0e0e0;
+}
+/*右侧容器*/
+.shareconfig .right{
+  width: 960px;
+  background-color:#fff ;
+  margin-left:10px;
+  float: left;
+}
+.shareconfig .right h4{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  text-align:left;
+  width: 960px;
+  height: 38px;
+  background-color: #f9f9f9;
+  padding-top: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+.shareconfig .right input[type="text"]{
+  background:#ffffff;
+  border:1px solid #ebebeb;
+  border-radius:2px;
+  width:298px;
+  height:30px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#464646;
+  letter-spacing:0;
+  text-align:left;
+  padding-left: 10px;
+}
+.shareconfig .right input[type="radio"]{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#777777;
+  letter-spacing:0;
+}
+.shareconfig .right dl{
+  float: left;
+  margin-left: 100px;
+  margin-top: 30px;
+}
+.shareconfig .right dl dd{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#888888;
+  letter-spacing:0;
+  text-align: left;
+  margin-bottom: 20px;
+
+}
+.shareconfig .right dl span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+  padding-left:15px;
+}
+
+.shareconfig .right .second{
+  float: right;
+  margin-right: 150px;
+}
+/*规则命名及设置*/
+.shareconfig .right .config{
+  width: 100%;
+  height: 100px;
+}
+.shareconfig .right form{
+  margin-top: 20px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#777777;
+  letter-spacing:0;
+  text-align:left;
+}
+
+/*详细设置*/
+
+.shareconfig .right .detail label{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#9b9b9b;
+  letter-spacing:0;
+  text-align:right;
+  padding-left: 30px;
+}
+.shareconfig .right .detail input{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#777777;
+  letter-spacing:0;
+  text-align:left;
+  margin-left: 30px;
+  margin-bottom: 35px;
+}
+
+/*1像素的底边边框*/
+.b{
+  border-bottom: 1px solid #f3f3f3;
+  padding-bottom: 30px;
+}
+/*对用户要求样式*/
+.shareconfig .right .user{
+  position: relative;
+}
+.shareconfig .right .user h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .user label{
+  margin-left: 160px;
+  width: 86px;
+  height: 16px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+}
+.shareconfig .right .user input{
+  margin-left: 48px;
+  margin-bottom: 14px;
+}
+
+.shareconfig .right .user select{
+  background:#ffffff;
+  border:1px solid #ebebeb;
+  border-radius:2px;
+  width:298px;
+  height:32px;
+  margin-left: 15px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+  letter-spacing:0;
+  text-align:left;
+  padding-left: 12px;
+  margin-left: 48px;
+  margin-bottom: 14px;
+}
+/*时间要求*/
+.shareconfig .right .time{
+  position: relative;
+}
+.shareconfig .right .time h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .time label{
+  margin-left: 160px;
+  width: 115px;
+  height: 16px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+}
+.shareconfig .right .time input{
+  margin-left: 20px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+}
+.shareconfig .right .time span{
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#9b9b9b;
+  letter-spacing:0;
+  margin-left: 20px;
+}
+/*送样要求样式*/
+.shareconfig .right .simple{
+  position: relative;
+}
+.shareconfig .right .simple h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .simple label{
+  margin-left: 160px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+  text-align:left;
+}
+.shareconfig .right .simple input{
+  margin-left: 59px;
+}
+.shareconfig .right .simple span{
+  float: right;
+  margin-right: 108px;
+}
+/*退改签要求*/
+.shareconfig .right .change{
+  position: relative;
+}
+.shareconfig .right .change h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .change label{
+  display: inline-block;
+  margin-left: 160px;
+  width: 126px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+}
+.shareconfig .right .change input{
+  margin-left: 13px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+}
+.shareconfig .right .change span{
+  margin-left: 20px;
+  font-size:12px;
+  color:#9b9b9b;
+  letter-spacing:0;
+}
+/*浏览权限要求*/
+.shareconfig .right .check{
+  position: relative;
+}
+.shareconfig .right .check h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .check label{
+  display: inline-block;
+  margin-left: 160px;
+  width: 126px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+}
+.shareconfig .right .check input{
+  margin-left: 13px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+}
+/*可委托测试项目*/
+.shareconfig .right .othertest{
+  position: relative;
+}
+.shareconfig .right .othertest h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .othertest label{
+  display: inline-block;  
+  width: 126px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+  margin-left: 13px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+}
+.shareconfig .right .othertest input{
+  margin-left: 160px;
+}
+
+/*周期设置*/
+.shareconfig .right .period{
+  position: relative;
+}
+.shareconfig .right .period h6{
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  letter-spacing:0;
+}
+.shareconfig .right .period label{
+  display: inline-block;  
+  width: 126px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5e5e5e;
+  letter-spacing:0;
+  margin-left: 13px;
+  margin-bottom: 14px;
+  margin-right: 20px;
+}
+.shareconfig .right .period  input{
+  margin-left: 160px;
+}
+.shareconfig .right .period  .ddate{
+  background:#ffffff;
+  border:1px solid #eaeaea;
+  border-radius:2px;
+  width:58px;
+  height:28px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+/*开始样式*/
+.shareconfig .right .period .start{
+  margin-left: 200px;
+  margin-bottom: 20px;
+}
+.shareconfig .right .period .start .startin{
+  background:#ffffff;
+  border:1px solid #ccc;
+  border-radius:2px;
+  width:288px;
+  height:28px;
+  margin-left: 10px;
+}
+.shareconfig .right .period .start .startt{
+  background:#ffffff;
+  border:1px solid #ccc;
+  border-radius:2px;
+  width:88px;
+  height:28px;
+  margin-left: 10px;
+}
+/*每隔几周*/
+.shareconfig .right .period .start .startw{
+  background:#ffffff;
+  border:1px solid #eaeaea;
+  border-radius:2px;
+  width:58px;
+  height:28px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+/*发布按钮*/
+.shareconfig .right .btn{
+  background:#178c5b;
+  border-radius:2px;
+  width:74px;
+  height:32px;
+  text-align: center;
+  line-height: 32px;
+  margin:20px auto;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+}

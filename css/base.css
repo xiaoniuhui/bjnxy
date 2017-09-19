@@ -1,0 +1,176 @@
+body,p,ul,h1,h2,h3,h4,h5,h6,dl,dt,dd{
+  margin: 0;
+  padding: 0;
+}
+.w{
+  margin: 0 auto;
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
+
+input{
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+/*头部公共代码*/
+ .header{
+  width: 100%;
+  height: 52px;
+  background-color: #262626;
+  overflow: hidden;
+  position: relative;
+}
+ .header .logo{
+  width: 28px;
+  height: 28px;
+  margin-left: 350px;
+  margin-top: 11px;
+}
+ .header .title .yunda{
+  color: #fff;
+  font-size: 16px;
+  font-family: MicrosoftYaHei;
+  position: absolute;
+  top:15px;
+  left: 392px;
+}
+/*右侧登录部分*/
+ .header .login{
+  position: absolute;
+  top:15px;
+  right: 248px;
+}
+ .header .login a{
+  color: #fff;
+  font-size: 14px;
+  margin-right: 10px;
+  font-family: MicrosoftYaHei;
+}
+.header .login a:hover{
+  color:red;
+}
+/*主题内容开始*/
+ .topnav{
+  width: 100%;
+  /*height: 50px;*/
+  background-color: #F5F5F5;
+}
+ .topnav ul{
+  overflow: hidden;
+  margin-left: 372px;
+}
+ .topnav li{
+  float: left;
+  line-height: 1;
+}
+ .topnav li a{
+  font-size: 14px;
+  color: #262626;
+  font-family:MicrosoftYaHei;
+  display: block;
+  padding: 18px 20px;
+}
+ .topnav li a:hover{
+  color: #178c5b;
+}
+/*背景部分开始*/
+ .bg{
+  height: 260px;
+  background-image: url('../images/banner.png');
+  overflow: hidden;
+}
+ .bg .title{
+  text-align: center;
+}
+ .bg .title p{
+  font-family:PingFangSC-Ultralight;
+  font-size:30px;
+  color:#ffffff;
+  margin-top: 40px;
+  padding-bottom: 3px;
+}
+ .bg .title span{
+  font-family:PingFangSC-Ultralight;
+  font-size:18px;
+  color:#ffffff;
+}
+ .bg .search{
+  width: 746px;
+  height: 60px;
+  margin-top: 33px;
+  margin-left: 368px;
+  background-color: #F2F8FC;
+}
+ .bg .search .left{
+  width: 681px;
+  height: 60px;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 21px;
+  font-family:MicrosoftYaHei;
+  font-size:18px;
+  color:#9d9d9d;
+  border-right: 3px solid #E7ECEF;
+  background-color: #F2F8FC;
+}
+ .bg .search .right{
+  float: right;
+  height: 60px;
+  width: 65px;
+  background: url('../images/Shape.png') no-repeat center;
+  background-color: #f2f8fc;
+}
+/*头部公共代码结束*/
+
+
+/*底部结尾部分公共代码*/
+ .footer{
+  width: 100%;
+  height: 190px;
+  background-color: #333;
+  padding-top: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+/*友情链接部分*/
+ .footer .links{
+  text-align: center;
+   border-bottom: 1px solid #434343;
+   width: 1100px;
+   padding-bottom: 23px;
+}
+ .footer .links a{
+  color: #AAA;
+  padding: 0 15px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#d6d6d6;
+  line-height:26px;
+  text-align:left;
+}
+/*结尾*/
+ .footer .copyright{
+  text-align: center;
+  padding-top: 16px;
+  color: #eaeaea;
+  font-size: 12px;
+}
+/*回到顶部*/
+ .footer .backtop{
+  position: absolute;
+  top: -27px;
+  left: 50%;
+  margin-left: -27px;
+  width: 54px;
+  height: 54px;
+}
+/*结尾公共代码结束*/

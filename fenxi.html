@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>分析中心</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/fenxi.css">
+  <link rel="stylesheet" href="css/font_389130_jdx613e3vos6pqfr/iconfont.css">
+  <script src="css/font_rtk4hl3smm42t9/iconfont.js"></script>
+</head>
+<body>
+    <!-- 登录 -->
+    <form action="" id="loginform">
+      <div id="loginbox">
+        <div class="login-title">账号登录</div>
+        <input type="text" 
+               style="margin-top: 50px;margin-bottom: 8px;" 
+               data-required
+               data-description='nickname'
+               id="nickname" 
+               data-describedby='msg'
+               placeholder="用户名">
+               <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+        <input type="password"
+               data-required
+               data-description='pwd'
+               id="pwd"
+               data-describedby='pwdmsg'
+               placeholder="密码">
+               <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+        <a href="fillaccount.html"><span>忘记密码</span></a>
+        <button type="submit" id="loginbtn">登录</button>
+        <div class="xiaowai">
+          <a href="">统一身份认证</a>
+          <a href="notice.html" style="float: right;">校外用户注册</a>
+        </div>
+      </div>
+    </form>
+    <!-- 头部 -->    
+    <div class="header">    
+      <div class="w clearfix">
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+        <div class="login">
+          <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+          <a href="notice.html" class="nihao">校外用户注册</a>
+          <a href="index.html">系统首页</a>
+        </div>
+      </div>
+    </div>
+    <!-- 平台成员导航 -->
+    <div class="topnav">
+      <ul class="w">
+        <li><a href="platforminfo.html">平台成员</a></li>
+        <li><a href="guizhang.html">规章制度</a></li>
+        <li><a href="devicelist.html">开放仪器</a></li>
+        <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+        <li><a href="wenda.html">问答咨询</a></li>
+        <li><a href="we.html">关于我们</a></li>
+      </ul>
+    </div>
+  <!-- 头部结束 -->
+  <!-- 背景搜索 -->
+    <div class="bg"></div>
+  <!-- 背景搜索结束 -->
+  <!-- 通屏头部导航 -->
+  <div class="top-title">
+    <div class="w">
+      <a href="index.html" class="first">首页 > </a>
+      <a href="platforminfo.html" class="first">平台成员 > </a>
+      <a href="javascript:void(0)" class="last">分析中心</a>
+    </div>
+  </div>
+  <!-- 通屏头部导航结束 -->
+
+  <!-- 中间内容开始 -->  
+  <div class="w fenxi">
+    <div class="left-box">
+      <div class="topinfo">平台成员</div>
+      <div class="jianjie">
+       <ul>         
+         <li>
+            <a style="background-color:#178c5b;color: #fff;">分析中心 (68台)<span id="fx-down" 
+            style="margin-right: 20px;font-size: 6px;float: right;" class="iconfont icon-zhankaijiantou"></span></a>
+            <ul id="fx-ul">
+              <li><a href="shiyanshi.html" class="iconfont icon-quan">实验室介绍</a></li>
+              <li><a href="shiyanshidongtai.html" class="iconfont icon-quan">实验室动态</a></li>
+              <li><a href="fuwuzhinan.html" class="iconfont icon-quan">服务指南</a></li>
+              <li><a href="ziliao.html" class="iconfont icon-quan">资料下载</a></li>
+              <li><a href="devicelist.html" class="iconfont icon-quan">开放仪器</a></li>
+              <li><a href="shoufei.html" class="iconfont icon-quan">收费标准</a></li>
+            </ul>
+         </li>
+         <li>
+            <a>微纳加工平台(18台)<span id="fx-down2" 
+              style="margin-right: 20px;font-size: 6px;float: right;color:#777;" class="iconfont icon-shouqijiantou"></span></a>
+            <ul id="fx-ul2" style="display: none;">
+              <li><a href="" class="iconfont icon-quan">电子电器检测</a></li>
+              <li><a href="" class="iconfont icon-quan">电磁兼容检测</a></li>
+              <li><a href="" class="iconfont icon-quan">可靠性测试</a></li>
+              <li><a href="" class="iconfont icon-quan">医药检测</a></li>            
+            </ul>
+         </li>
+         <li>
+            <a>集成电路(9台)<span id="fx-down3" 
+              style="margin-right: 20px;font-size: 6px;float: right;color:#777;" class="iconfont icon-shouqijiantou"></span></a>
+            <ul id="fx-ul3" style="display: none;">
+              <li><a href="" class="iconfont icon-quan">生物医药</a></li>
+              <li><a href="" class="iconfont icon-quan">机械工程</a></li>
+              <li><a href="" class="iconfont icon-quan">农业</a></li>
+              <li><a href="" class="iconfont icon-quan">材料</a></li>
+              <li><a href="" class="iconfont icon-quan">有机化学</a></li>
+            </ul>
+         </li>
+         <li>
+            <a>化工系测试平台(7台)<span id="fx-down4" 
+              style="margin-right: 20px;font-size: 6px;float: right;color:#777;" class="iconfont icon-shouqijiantou"></span></a>
+            <ul id="fx-ul4" style="display: none;">
+              <li><a href="" class="iconfont icon-quan">生物医药</a></li>
+              <li><a href="" class="iconfont icon-quan">机械工程</a></li>
+              <li><a href="" class="iconfont icon-quan">农业</a></li>
+              <li><a href="" class="iconfont icon-quan">材料</a></li>
+              <li><a href="" class="iconfont icon-quan">有机化学</a></li>
+            </ul>
+         </li>
+       </ul>
+      </div>
+    </div>
+    <div class="right-box">
+      <!-- 公共导航 -->
+      <div class="top-nav">
+        <div class="left-border"></div>
+        <span>分析中心</span>
+        <div class="right-border"></div>
+      </div>
+      <!-- 公共导航结束 -->
+      <!-- 分析文字 -->
+      <div class="fenxi-p">
+        <p>包括样品室、结构分析室、光谱室、物像分析室、元素分析室、成分分析室等七个专业分析室。
+        具备检测材料成分、含量、分子量、分子结构、元素种类、化学组成等功能，能够进行材料微结构分析、有机和无机化合物的定性和定量分析、微区形貌和成份分析、材料性能测定、计量检定、环境质量检测和药物分析等工作。
+        </p>
+      </div>
+      <div style="width: 870px;height: 246px;background-color: #198770;margin-bottom: 40px;"></div>
+      <!-- 公共导航 -->
+      <div class="top-nav">
+        <div class="left-border"></div>
+        <span>设备分类</span>
+        <div class="right-border"></div>
+      </div>
+      <!-- 公共导航结束 -->
+      <!-- 设备分类盒子 -->
+      <div class="items">
+        <div class="item">电子光学仪器（3台）</div>
+        <div class="item">离子光学仪器</div>
+        <div class="item">X射线仪器</div>
+        <div class="item">光谱仪器</div>
+        <div class="item">色谱仪器（2台）</div>
+        <div class="item">波谱仪器</div>
+        <div class="item">电化学仪器</div>
+        <div class="item">生化分离分析仪器</div>
+        <div class="item">气体分析仪器</div>
+        <div class="item">显微镜及图像仪</div>
+        <div class="item">化学反应及热分析仪器</div>
+        <div class="item">声学振动仪器</div>
+        <div class="item">力学性能测试仪器</div>
+        <div class="item">光电测量仪器</div>
+        <div class="item">计算机及网络设备</div>
+        <div class="item">材料加工设备及分析…</div>
+        <div class="item">航测及大地测量仪</div>
+        <div class="item">天文观测仪器设备</div>
+        <div class="item">海洋仪器及科考船</div>
+        <div class="item">气象仪器</div>
+        <div class="item">地震仪器</div>
+        <div class="item">环境监测仪器</div>
+        <div class="item">电子仪器、设备</div>
+        <div class="item">核仪器、设备</div>
+        <div class="item">医疗仪器</div>
+        <div class="item">航天仪器</div>
+        <div class="item">浓、林仪器、设备</div>
+        <div class="item">能源、交通、水利仪器</div>
+        <div class="item">计量仪器、设备</div>
+        <div class="item">工程实验装置</div>
+        <div class="item">机械制造设备（各种…</div>
+      </div>
+      <!-- 设备分类盒子结束-->
+      <!-- 公共导航 -->
+      <div class="top-nav">
+        <div class="left-border"></div>
+        <span>项目检测</span>
+        <div class="right-border"></div>
+      </div>
+      <!-- 公共导航结束 -->
+
+      <!-- 项目检测 -->
+      <div class="test">
+        <div class="list">
+          <p>电子电器检测</p>
+          <span>卤素</span><span>ROHS</span><span>PAHs</span><span>重金属</span><span>有机锡化合物</span><span>REACH</span><span>PFOS/PFOA</span><span>PVC</span><span>偶氮化合物</span>
+        </div>
+        <div class="list">
+          <p>电磁兼容检测</p>
+          <span>射频电磁场辐射</span><span>电快速瞬变脉冲群</span><span>电压跌落抗扰度</span><span>传导骚扰</span><span>谐波电流</span><span>REACH</span><span>工频磁场抗扰度</span><span>PVC</span><span>偶氮化合物</span>
+        </div>
+        <div class="list">
+          <p>可靠性测试</p>
+          <span>射频电磁场辐射</span><span>电快速瞬变脉冲群</span><span>电压跌落抗扰度</span><span>传导骚扰</span><span>谐波电流</span><span>REACH</span><span>工频磁场抗扰度</span><span>PVC</span><span>偶氮化合物</span>
+        </div>
+        <div class="list">
+          <p>化妆品检测</p>
+          <span>射频电磁场辐射</span><span>电快速瞬变脉冲群</span><span>电压跌落抗扰度</span><span>传导骚扰</span><span>谐波电流</span><span>REACH</span><span>工频磁场抗扰度</span><span>PVC</span><span>偶氮化合物</span>
+        </div>
+        <div class="list">
+          <p>医药检测</p>
+          <span>射频电磁场辐射</span><span>电快速瞬变脉冲群</span><span>电压跌落抗扰度</span><span>传导骚扰</span><span>谐波电流</span><span>REACH</span><span>工频磁场抗扰度</span><span>PVC</span><span>偶氮化合物</span>
+        </div>
+        <div class="list">
+          <p>工艺实验及加工</p>
+          <span>微纳加工</span>
+        </div>
+      </div>
+
+      <!-- 公共导航 -->
+      <div class="top-nav">
+        <div class="left-border"></div>
+        <span>服务领域</span>
+        <div class="right-border"></div>
+      </div>
+      <!-- 公共导航结束 -->
+      
+      <!-- 服务领域盒子 -->
+      <div class="items">
+        <div class="item">电子光学仪器（3台）</div>
+        <div class="item">离子光学仪器</div>
+        <div class="item">X射线仪器</div>
+        <div class="item">光谱仪器</div>
+        <div class="item">色谱仪器（2台）</div>
+        <div class="item">波谱仪器</div>
+        <div class="item">电化学仪器</div>
+        <div class="item">生化分离分析仪器</div>
+        <div class="item">气体分析仪器</div>
+        <div class="item">显微镜及图像仪</div>
+        <div class="item">化学反应及热分析仪器</div>
+        <div class="item">声学振动仪器</div>
+        <div class="item">力学性能测试仪器</div>
+        <div class="item">光电测量仪器</div>
+        <div class="item">计算机及网络设备</div>
+        <div class="item">材料加工设备及分析…</div>
+        <div class="item">航测及大地测量仪</div>
+        <div class="item">天文观测仪器设备</div>
+        <div class="item">海洋仪器及科考船</div>
+        <div class="item">气象仪器</div>
+        <div class="item">地震仪器</div>
+        <div class="item">环境监测仪器</div>
+        <div class="item">电子仪器、设备</div>
+        <div class="item">核仪器、设备</div>
+        <div class="item">医疗仪器</div>
+      </div>
+
+      
+    </div>
+  </div>
+  <!-- 中间内容结束 -->
+
+
+
+
+  <!-- 底部 -->
+  <div class="footer w">
+    <div class="links w">
+      <a href="#">友情链接:</a>
+      <a href="#">采购信息网</a>
+      <a href="#">实验室</a>
+      <a href="#">资产</a>
+      <a href="#">大型仪器设备共享</a>
+      <a href="#">实验室安全考试培训</a>
+      <a href="#">国家网络管理平台</a>
+      <a href="#">云南省大仪网</a>
+      <a href="#">某某高校</a>
+    </div>
+    <div class="copyright">
+      <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+      <br/>
+      <span>首页访问次数</span><span>1101次</span>
+    </div>
+  </div>
+  <!-- 底部结束 -->
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="assets/layer/layer.js"></script>
+  <script src="assets/Validate-master/jquery-validate.min.js"></script>
+  <script src="assets/form-master/jquery.form.js"></script>
+  <script src="js/login.js"></script>
+  <script>
+    $(function(){
+      $('#fx-down').on('click',function(){        
+        if($(this).hasClass("icon-shouqijiantou")){
+          $('#fx-ul').show(500);
+          $(this).addClass('icon-zhankaijiantou');
+          $(this).removeClass('icon-shouqijiantou');
+        }else{
+          $('#fx-ul').hide(500);
+          $(this).addClass('icon-shouqijiantou');
+          $(this).removeClass('icon-zhankaijiantou');
+        }
+      })
+      $('#fx-down2').on('click',function(){        
+        if($(this).hasClass("icon-shouqijiantou")){
+          $('#fx-ul2').show(500);
+          $(this).addClass('icon-zhankaijiantou');
+          $(this).removeClass('icon-shouqijiantou');
+        }else{
+          $('#fx-ul2').hide(500);
+          $(this).addClass('icon-shouqijiantou');
+          $(this).removeClass('icon-zhankaijiantou');
+        }
+      })
+      $('#fx-down3').on('click',function(){        
+        if($(this).hasClass("icon-shouqijiantou")){
+          $('#fx-ul3').show(500);
+          $(this).addClass('icon-zhankaijiantou');
+          $(this).removeClass('icon-shouqijiantou');
+        }else{
+          $('#fx-ul3').hide(500);
+          $(this).addClass('icon-shouqijiantou');
+          $(this).removeClass('icon-zhankaijiantou');
+        }
+      })
+      $('#fx-down4').on('click',function(){        
+        if($(this).hasClass("icon-shouqijiantou")){
+          $('#fx-ul4').show(500);
+          $(this).addClass('icon-zhankaijiantou');
+          $(this).removeClass('icon-shouqijiantou');
+        }else{
+          $('#fx-ul4').hide(500);
+          $(this).addClass('icon-shouqijiantou');
+          $(this).removeClass('icon-zhankaijiantou');
+        }
+      })
+
+    });//end $function
+  </script>
+
+</body>
+</html>

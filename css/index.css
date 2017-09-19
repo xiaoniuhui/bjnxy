@@ -1,0 +1,481 @@
+/* box */
+.box{width:100%;margin:10px auto;background:;}
+.tab_menu{width:1180px;margin:0 auto;overflow: hidden;background-color:#F9F9F9;}
+.tab_menu li{width:120px;float:left;height:100px;line-height:100px;text-align: center;margin-left: 170px;border-bottom: 3px solid transparent;}
+.tab_menu li a{color:#444;font-size: 28px;}
+.tab_menu li.current{border-bottom: 3px solid #178c5b;}
+.tab_box .hide{display:none;}
+/*开放平台成员部分*/
+.index .platform{
+  background-color:#fff;
+  overflow: hidden;
+}
+.index .platform .tubiao{
+  width: 41px;
+  height: 38px;
+  margin:0 auto;
+  margin-top: 45px;
+}
+.index .platform p{
+  font-family:MicrosoftYaHei;
+  font-size:28px;
+  color:rgba(51,51,51,0.92);
+  text-align:center;
+  margin-top: 33px;
+}
+.index .platform span{
+  display: block;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(51,51,51,0.92);
+  text-align:center;
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+/*小图标部分*/
+.index .platform .items{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.index .platform .items .item{
+  width: 240px;
+}
+.index .platform .items img{
+  margin-left: 94px;
+}
+.index .platform .items .item span{
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:rgba(51,51,51,0.92);
+  margin-top: 10px;
+  display: block;
+}
+/*实验室部分*/
+.index .info {
+  width: 100%;
+  height: 185px;
+  background-color: #f4f6f9;
+  padding-left: 90px;
+  box-sizing: border-box;
+  position: relative;
+}
+.index .info .jiantou{
+  position: absolute;
+  top: -5px;
+  left: 470px;
+  width: 10px;
+  height: 10px;
+  background-color: #f4f6f9;
+  transform: rotate(45deg);
+}
+.index .info dl{
+  text-align: left;
+  float: left;
+  width:33%;
+}
+.index .info dt{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(51,51,51,0.92);
+  padding-top: 34px;
+}
+.index .info dd{
+  /*margin-top: 11px;*/
+}
+.index .info dd a{
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:rgba(102,102,102,0.92);
+}
+.index .info dd a:hover{
+  color: red;
+}
+/*介绍下面的小图标*/
+.index .look{
+}
+.index .look .items{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.index .look .items .item{
+  width: 240px;
+}
+.index .look .items img{
+  margin-left: 94px;
+}
+.index .look .items .item span{
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:rgba(51,51,51,0.92);
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+}
+/*.index .items{
+  width: 1442px;
+  height: 140px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+.index .items .item{
+  width: 240px;
+}*/
+/*查看更多*/
+.index .look .lookmore{
+  width: 160px;
+  height: 42px;
+  border: 1px solid #000;
+  background-color:#fff;
+  text-align: center;
+  line-height: 42px;
+  margin-top: 56px;
+}
+/*轮播图部分*/
+.index .swiper{
+  width: 100%;
+  height: 370px;
+  background-image: url('../images/bigbg.png');
+  background-position: -200px -280px;
+  background-color: #006d46;
+  margin-top: 50px;
+  text-align:center;
+}
+
+.index .swiper p{
+  font-family:MicrosoftYaHei;
+  font-size:28px;
+  color:rgba(255,255,255,0.92);
+  padding-top: 50px;
+  padding-bottom: 26px;
+}
+.index .swiper span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(255,255,255,0.92);
+}
+/*左右箭头*/
+.index .swiper .w{
+  position: relative;
+}
+.index .swiper  .w .arrleft{
+  position: absolute;
+  top: 227px;
+  left: 40px;
+}
+.index .swiper  .w .arrright{
+  position: absolute;
+  top: 227px;
+  right:40px;
+}
+/*轮播图控件*/
+.swiper-container {
+    width: 1000px;
+    height: 142px;
+    margin-top: 35px;
+    position: relative;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;        
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-slide a{
+  cursor: pointer;
+}
+/*通知公告开始*/
+.index .notice{
+  width: 100%;
+  height: 100px;
+  background-color: #f7f7f7;
+  line-height: 100px;
+}
+.index .notice span{
+  font-family:MicrosoftYaHei;
+  font-size:28px;
+  color:#444444;
+  margin-left: 190px;
+  padding-bottom: 29px;
+   
+}
+
+/*.index .notice span:hover{
+  border-bottom:3px solid #178c5b; 
+}*/
+/*通知公告内容*/
+.index .public{
+  width: 1180px;
+  overflow: hidden;
+}
+.index .public .left{
+  float: left;
+  width: 474px;
+  height: 360px;
+  /*margin-top: 50px;*/
+  background-image: url('../images/notice.png');
+  position: relative;
+}
+.index .public .left .title{
+  position: absolute;
+  bottom: 25px;
+  left:28px;
+}
+.index .public .left p{
+  font-family:MicrosoftYaHei;
+  font-size:18px;
+  color:#ffffff;
+  margin-bottom: 10px;
+}
+.index .public .left h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#ffffff;
+}
+.index .public .right{
+  width:600px;
+  float: left;
+  /*margin-top: 50px;*/
+  margin-left: 50px;
+  overflow: hidden;
+}
+.index .public .right .top{
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+
+}
+.index .public .right .top .content{
+  width: 100%;
+  margin-top: 80px;
+}
+.index .public .right .top .content span{
+  float: left;
+  font-family:PingFangSC-Light;
+  font-size:14px;
+  color:#a4a4a4;
+}
+.index .public .right .top .content p{
+  float: left;
+  font-family:PingFangSC-Light;
+  font-size:14px;
+  color:#666666;
+  line-height:26px;
+  margin-top: -21px;
+  margin-left: 102px;
+}
+.index .public .right .top .date{
+  width: 70px;
+  height: 60px;
+  float: left;
+  margin-top: 15px;
+  background-image: url(../images/date.png);
+  text-align: center;
+  line-height: 60px;
+  color:#fff;
+}
+.index .public .right .top .title{
+  height: 60px;
+  float: left;
+  margin-top: 15px;
+  padding-left: 30px;
+}
+.index .public .right .top .title p{
+  font-family:PingFangSC-Light;
+  font-size:14px;
+  color:#178c5b;
+  margin-bottom: 10px;
+}
+.index .public .right .top .title h6{
+  font-family:PingFangSC-Regular;
+  font-size:16px;
+  color:#333333;
+}
+.index .public .right .bottom{
+  width: 100%;
+}
+
+/*隐藏右侧列表*/
+ .list{
+  margin-top: 10px;
+
+}
+ .list .item{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #efefef;
+  overflow: hidden;
+}
+ .list .l-i-left{
+  width: 500px;
+  height: 100%;
+  float: left;
+}
+ .list .l-i-left p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  margin-left: 25px;
+}
+ .list .l-i-right{
+  width: 150px;
+  height: 100%;
+  float: right;
+  margin-right: 20px;
+}
+ .list .l-i-right span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+ .list .l-i-right span.r{
+  float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*仪器排行榜*/
+.index .rank{
+  width:100%;
+  margin-top: 45px;
+  background-image: url(../images/bg.png);
+  text-align: center;
+  padding-top: 28px;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+.index .rank p{
+  font-family:;
+  font-size:28px;
+  color:rgba(255,255,255,0.92);
+}
+.index .rank span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(255,255,255,0.92);
+}
+/*图标排行样式*/
+.index .rank .iconrank {
+  width: 630px;
+  height: 120px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.index .rank .iconrank .item{
+  width: 33%;
+  float: left;
+  cursor: pointer;
+}
+.index .rank .iconrank .item .logo{
+  width: 31px;
+  height: 38px;
+  margin-left: 90px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.index .rank .iconrank .item p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:rgba(255,255,255,0.92);
+  text-align:center;
+  padding-bottom: 11px;
+}
+.index .rank .iconrank .item span{
+  font-family:PingFangSC-Medium;
+  font-size:20px;
+  color:#f5d73e;
+  text-align:center;
+}
+/*仪器排名使用次数*/
+.index .rank .rankitem{
+  height: 100px;
+  margin-top: 50px;
+  overflow:hidden;
+}
+.index .rank .left{
+  width: 49%;
+  height: 100px;
+  float: left;
+  position: relative;
+}
+.index .rank .left ul{
+  /*background-color:red;*/
+  margin-left: 100px;
+}
+.index .rank .left li{
+  padding: 5px 0;
+}
+.index .rank .left .cishu{
+  margin-left: 50px;
+}
+.index .rank .left .ranking{
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  background-image: url('../images/rank.png');
+  position: absolute;
+  
+}
+.index .rank .left .wave{
+  width: 7px;
+  height: 8px;
+  background-color:redg
+  position: absolute;
+  right: 0;
+  top: 0;
+  
+}
+.index .rank .left .r1{
+  left: 180px;
+  top:7px;
+}
+.index .rank .left .r2{
+  left: 180px;
+  top:37px;
+}
+.index .rank .left .r3{
+  left: 180px;
+  top:67px;
+}

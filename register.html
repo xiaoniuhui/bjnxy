@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>欢迎注册</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+        <!-- 登录 -->
+        <form action="" id="loginform">
+          <div id="loginbox">
+            <div class="login-title">账号登录</div>
+            <input type="text" 
+                   style="margin-top: 50px;margin-bottom: 8px;" 
+                   data-required
+                   data-description='nickname'
+                   id="nickname" 
+                   data-describedby='msg'
+                   placeholder="用户名">
+                   <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+            <input type="password"
+                   data-required
+                   data-description='pwd'
+                   id="pwd"
+                   data-describedby='pwdmsg'
+                   placeholder="密码">
+                   <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+            <a href="fillaccount.html"><span>忘记密码</span></a>
+            <button type="submit" id="loginbtn">登录</button>
+            <div class="xiaowai">
+              <a href="">统一身份认证</a>
+              <a href="notice.html" style="float: right;">校外用户注册</a>
+            </div>
+          </div>
+        </form>
+        <!-- 头部登录 -->
+        <div class="header" id="backtop">    
+          <div class="w clearfix">
+            <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+            <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+            <div class="login">
+              <!-- <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a> -->
+              <a href="notice.html" class="nihao">校外用户注册</a>
+              <a href="index.html">系统首页</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="top">
+            <div class="welcome">
+              <span class="register">欢迎注册</span>
+              <a href="" class=""><span class="exist">已有账号？</span></a>
+              <a href="javascript:void(0)" class="nihao" id="login"><span class="login">请登录</span></a>
+            </div>
+          </div>
+          <div class="bottom">
+          <div class="information">
+            <div class="left">
+              <div class="father">
+                <div class="textname">
+                  <label for="">用户名</label>
+                  <input type="text" class="name" placeholder="支持中文、字母、数字、“-”“—”组合，4-20个字符">
+                </div>
+                <div class="text">
+                  <label for="">登录密码</label>
+                  <input type="password" class="password" placeholder="建议使用字母、数字和符号两种及以上组合，6-20个字符">
+                </div>
+                <div class="text">
+                  <label for="">确认密码</label>
+                  <input type="password" class="confirm" placeholder="请再次输入密码">
+                </div>
+                <div class="text">
+                  <label for="">电子邮箱</label>
+                  <input type="text" class="email" placeholder="建议使用常用邮箱，用于登录和找回密码">
+                </div>
+                <div class="text">
+                  <label for="">手机号码</label>
+                  <input type="text" class="telephone" placeholder="建议使用常用手机，用于登录和找回密码">
+                </div>
+                <div class="text">
+                  <label for="">单位名称</label>
+                  <input type="text" class="unit" placeholder="请输入所在单位全称">
+                </div>
+                <div class="text">
+                  <label for="">用户身份</label>
+                  <input type="text" class="userid" placeholder="请选择用户身份">
+                </div>
+                <div class="text">
+                  <label for="">研究领域</label>
+                  <input type="text" class="researchfield" placeholder="请输入相关研究领域">
+                </div>
+                <div class="textname">
+                  <label for="">验证码</label>
+                 <input type="text" class="identifycode" placeholder="请输入验证码，如看不清，请点击图片刷新">
+                </div>   
+                <div class="agree">
+                  <input type="checkbox" name="tt" id="">
+                  <label for="" class="read">我已阅读并同意</label>
+                  <label for="" class="protocol">《云南大学共享平台服务协议》</label>
+                </div>
+                <button class="register">立即注册</button>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="context">
+                <div class="line">
+                  <img src="images/onlinebook.png" alt="">
+                  <span class="script">如何进行网上预约</span>
+                </div>
+              </div>
+              <div class="school">
+                <img src="images/userlogin.png" alt="">
+                <span class="script">校内用户登录</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- 底部 -->
+        <div class="footer w">
+            <div class="links w">
+              <a href="#">友情链接:</a>
+              <a href="#">采购信息网</a>
+              <a href="#">实验室</a>
+              <a href="#">资产</a>
+              <a href="#">大型仪器设备共享</a>
+              <a href="#">实验室安全考试培训</a>
+              <a href="#">国家网络管理平台</a>
+              <a href="#">云南省大仪网</a>
+              <a href="#">某某高校</a>
+            </div>
+            <div class="copyright">
+              <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+              <br/>
+              <span>首页访问次数</span><span>1101次</span>
+            </div>
+        </div>
+        
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="assets/layer/layer.js"></script>
+        <script src="assets/Validate-master/jquery-validate.min.js"></script>
+        <script src="assets/form-master/jquery.form.js"></script>
+        <script>
+            $(function(){
+              // 弹出登录
+              $('#login').on('click',function(){
+                layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 1,
+                shadeClose: false,
+                shade: [0.5,"black"],
+                content:$('#loginbox')
+                });
+              });
+              // 表单验证
+              $('#loginform').validate({
+                sendForm:false,
+                description:{
+                nickname:{
+                  required:'姓名不能为空'
+                },
+                pwd:{
+                  required:'密码长度不能少于六位'
+                }        
+                },
+                valid:function(){
+                  alert('登录成功');
+
+                }
+              });
+
+            });//;end $function
+        </script>
+</body>
+</html>

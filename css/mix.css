@@ -1,0 +1,733 @@
+
+
+.bg{
+  width: 100%;
+  height: 160px;
+  background-image: url('../images/bg2.png');
+  overflow: hidden;
+}
+
+
+
+.devicedetail .toptitle{
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color:#f9f9f9;
+  margin: 0 auto;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.devicedetail .toptitle span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#a6a6a6;
+}
+
+.devicedetail .content{
+  width: 1180px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+/*仪器显示*/
+.devicedetail .content .picture{
+  padding-top: 20px;
+  overflow: hidden;
+}
+.devicedetail .content .picture img{
+  float: left;
+}
+.devicedetail .content .picture .right{
+  height: 430px;
+  float: left;
+  margin-left: 60px;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+.devicedetail .content .picture .right dt{
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#444444;
+  padding-bottom: 36px;
+}
+.devicedetail .content .picture .right dd{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#a6a6a6;
+}
+.devicedetail .content .picture .right span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#646464;
+  line-height:26px;
+  margin-left: 10px;
+}
+.devicedetail .content .picture .right .btn{
+  margin-top: 38px;
+  overflow: hidden;
+}
+.devicedetail .content .picture .right .btnone{
+  float: left;
+  border:1px solid #9b9b9b;
+  width:60px;
+  height:30px;
+  line-height: 30px;
+  text-align:center;
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:#9b9b9b;
+}
+.devicedetail .content .picture .right .btntwo{
+  float: left;
+  border:1px solid #9b9b9b;
+  width:60px;
+  height:30px;
+  line-height: 30px;
+  text-align:center;
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:#9b9b9b;
+}
+.devicedetail .content .picture .right .btnthree{
+  float: left;
+  border:1px solid #9b9b9b;
+  width:94px;
+  height:30px;
+  font-family:MicrosoftYaHei;
+  font-size:16px;
+  color:#9b9b9b;
+  text-align:center;
+  line-height: 30px;
+  margin-left: 10px;
+}
+.devicedetail .content .picture .right .selftest{
+  background:#ffffff;
+  border:1px solid #17c488;
+  width:158px;
+  height:40px;
+  line-height: 40px;
+  margin-top: 30px;
+  text-align:center;
+  float: left;
+  margin-right: 20px;
+  
+}
+.devicedetail .content .picture .right .selftest a{
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#17c488;
+  
+}
+.devicedetail .content .picture .right .othertest{
+  background:#ffffff;
+  border:1px solid #2072d1;
+  width:158px;
+  height:40px;
+  line-height: 40px;
+  margin-top: 30px;
+  text-align:center;
+  float: left;
+  margin-right: 20px;
+  
+}
+.devicedetail .content .picture .right .othertest a{
+  font-family:MicrosoftYaHei;
+  font-size:20px;
+  color:#2072d1;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*小图片*/
+.devicedetail .content .smallp{
+  
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+/*tab选项卡*/
+.devicedetail .content .tab{
+  background:#f9f9f9;
+  width:1180px;
+}
+.devicedetail .content .tab ul{
+  overflow: hidden;
+}
+.devicedetail .content .tab li{
+  float: left;
+  overflow: hidden;
+  line-height: 1;
+  padding: 10px 20px; 
+}
+/*激活样式*/
+.active{
+  background-color:#178c5b;
+  color: #fff;
+}
+/*基本信息*/
+.devicedetail .content .baseinfo{
+  width: 100%;
+  height: 180px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+.devicedetail .content .baseinfo .item{
+  width: 25%;
+  /*height: 120px;*/
+  float: left;
+}
+.devicedetail .content .baseinfo .left{
+  float: left;
+  width: 80px;
+}
+.devicedetail .content .baseinfo .left h4{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#a1a1a1;
+  line-height:30px;
+  text-align:left;
+}
+.devicedetail .content .baseinfo .right{
+  float: left;
+}
+.devicedetail .content .baseinfo .right h4{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#5f5f5f;
+  line-height:30px;
+  text-align:left;
+}
+/*测试项目*/
+.devicedetail .content .test{
+  /*height: 430px;*/
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+/*主标题样式*/
+.bigtitle{
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #f9f9f9;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+/*参数、指标*/
+.devicedetail .content .argus{
+  padding-top: 22px;
+  padding-left: 205px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f3f3f3;
+  position: relative;
+}
+.devicedetail .content .argus p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+}
+.devicedetail .content .argus h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+/*领域*/
+.devicedetail .content .field{
+  padding-top: 22px;
+  padding-left: 205px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f3f3f3;
+  position: relative;
+}
+.devicedetail .content .field p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+}
+.devicedetail .content .field h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+/*科学领域*/
+.devicedetail .content .science{
+  padding-top: 22px;
+  padding-left: 205px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f3f3f3;
+  position: relative;
+}
+.devicedetail .content .science p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+}
+.devicedetail .content .science h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+/*配件*/
+.devicedetail .content .fit{
+  padding-top: 22px;
+  padding-left: 205px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f3f3f3;
+  position: relative;
+}
+.devicedetail .content .fit p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+}
+.devicedetail .content .fit h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+/*收费标准*/
+.devicedetail .content .pay{
+
+}
+/*测试表格*/
+.devicedetail .content .table table{
+  margin-top: 20px;  
+  width: 100%;
+  border-collapse:collapse;
+  border: 1px solid #eaeaea;
+}
+.devicedetail .content .table table th{
+  border: 1px solid #eaeaea;
+  text-align: left;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#444444;
+  letter-spacing:0;
+  height: 36px;
+  padding-left: 20px;
+  background-color:#eaeaea;
+}
+.devicedetail .content .table table tr td{
+  text-align: left;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+  letter-spacing:0;
+  height: 30px;
+  padding-left: 20px;
+}
+/*制样要求*/
+.devicedetail .content .zhiyang{
+  position: relative;
+}
+.devicedetail .content .zhiyang p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+
+}
+.devicedetail .content .zhiyang h3{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+
+/*预约日历*/
+.devicedetail .content .yuyue{
+  width: 100%;
+}
+.devicedetail .content .yuyue table{
+  width: 100%;
+  border-collapse:collapse;
+  border-spacing:0;
+  border-top: 1px solid #dfdfdf;
+  border-left: 1px solid #dfdfdf;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.devicedetail .content .yuyue table th{
+  text-align: center;
+  border-right:1px solid #dfdfdf;
+  border-bottom:1px solid #dfdfdf;
+  height: 40px;
+  color: #444;
+}
+.devicedetail .content .yuyue table td{
+  text-align: center;
+  border-right:1px solid #dfdfdf;
+  border-bottom:1px solid #dfdfdf;
+  height: 40px;
+}
+.devicedetail .content .yuyue .toptable{
+  width: 100%;
+  background:#178c5b;
+  height:40px;
+  line-height: 40px; 
+}
+.devicedetail .content .yuyue .toptable .l{
+  float: left;
+  width: 11px;
+  height: 16px;
+  margin-left: 20px;
+  margin-top: 12px;
+}
+.devicedetail .content .yuyue .toptable .m{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#ffffff;
+  float: left;
+  margin-left: 470px;
+}
+.devicedetail .content .yuyue .toptable .r{
+  float: right;
+  width: 11px;
+  height: 16px;
+  margin-right: 16px;
+  margin-top: 12px;
+}
+/*表格底部提示信息*/
+.devicedetail .content .bottom{
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  position: relative;
+}
+.devicedetail .content .bottom span{
+  line-height: 1;
+  margin-top: 10px;
+}
+.devicedetail .content .bottom .l{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  display: inline-block;
+}
+.devicedetail .content .bottom .r{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#178c5b;
+  display: inline-block;
+  width: 80px;
+}
+/*图标提示*/
+.devicedetail .content .icon{
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  line-height: 1;
+  padding: 5px 0px;
+}
+.devicedetail .content .icon img{
+  margin-left: 10px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*评价*/
+.devicedetail .content .mark{
+  position: relative;
+  background-color: #fff;
+}
+.devicedetail .content .mark p{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:26px;
+  text-align:left;
+}
+.devicedetail .content .mark .avatar{
+  width: 150px;
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+.devicedetail .content .mark .avatar img{
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.devicedetail .content .mark .avatar span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.devicedetail .content .mark span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+/*分页按钮组公共样式*/
+.devicedetail .content .pagebtn{
+  width: 100%;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+  padding: 30px  0;
+  overflow: hidden;
+}
+.devicedetail .content .pagebtn .rr{
+  float: right;
+  margin-right: 10px;
+}
+
+.devicedetail .content .pagebtn .arrbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+.devicedetail .content .pagebtn .btnbox{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:30px;
+  height:30px;
+  line-height: 30px;
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#178c5b;
+  text-align:center;
+}
+.devicedetail .content .pagebtn .total{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+.devicedetail .content .pagebtn .next{
+  display: inline-block;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#777777;
+}
+.devicedetail .content .pagebtn input{
+  background:#ffffff;
+  border:1px solid #dfe6ea;
+  border-radius:2px;
+  width:48px;
+  height:30px;  
+  margin-right: 10px;    
+}
+.devicedetail .content .pagebtn .btn{
+  background:#178c5b;
+  border-radius:2px;
+  width:54px;
+  height:32px;
+  line-height: 32px;
+  font-family:MicrosoftYaHei;
+  font-size:12px;
+  color:#ffffff;
+  text-align: center;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
+/*相关材料*/
+.devicedetail .content .relainfo{
+
+}
+.devicedetail .content .relainfo .item{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #efefef;
+}
+.devicedetail .content .relainfo .item .l{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  padding-left: 10px;
+}
+.devicedetail .content .relainfo .item .m{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+.devicedetail .content .relainfo .item .r{
+  float: right;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+/*历史公告*/
+.devicedetail .content .history{
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 15px;
+}
+.devicedetail .content .history .top{
+  width: 1160px;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  background-color: #f8f8f8;
+  margin-top: 20px;
+}
+.devicedetail .content .history .top .l{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+}
+.devicedetail .content .history .top .m{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+}
+.devicedetail .content .history .top .r{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#b2b2b2;
+  float: right;
+  padding-right: 8px;
+}
+.devicedetail .content .history .text p{
+  width: 1160px;
+  margin: 0 auto;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#828282;
+  line-height:30px;
+  text-align:left;
+}
+/*同类资源*/
+.devicedetail .content .resour{
+
+}
+/*.devicedetail .content .resour .item{
+  width: 100%;
+  height: 85px;
+  border-bottom: 1px solid #ccc;
+  padding-top: 25px;
+  padding-bottom: 20px;
+}*/
+.devicedetail .content .resour .item{
+  width: 100%;
+  height: 129px;
+  border-bottom: 1px solid #efefef;
+  box-sizing: border-box;
+  padding-top: 24px;
+  position: relative;
+}
+.devicedetail .content .resour .item dl{
+  position: absolute;
+  top: 24px;
+  left: 400px;
+}
+.devicedetail .content .resour .item .first{
+  left: 120px;
+}
+.devicedetail .content .resour .item dd{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#444444;
+  line-height:30px;
+  text-align:left;
+  padding-left: 10px;
+}
+.devicedetail .content  .resour .item span{
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#999999;
+  text-align:left;
+  padding-left: 10px;
+}
+.devicedetail .content .resour .item .danwei{
+  left: 730px;
+}
+/*按钮组*/
+.devicedetail .content .resour .item .selftest{
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  top: 24px;
+  right: 15px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#17c488;
+  text-align:center;
+  border: 1px solid #17c488;
+}
+.devicedetail .content .resour .item .othertest{
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  top: 70px;
+  right: 15px;
+  font-family:MicrosoftYaHei;
+  font-size:14px;
+  color:#2072d1;
+  text-align:center;
+  border: 1px solid #2072d1;
+}

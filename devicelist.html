@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit|ie-comp|ie-stand"/> 
+  <title>开放仪器列表页面</title>
+  <link rel="stylesheet" href="css/basefuben.css">
+  <link rel="stylesheet" href="css/devicelist.css">  
+  <link rel="stylesheet" href="css/font_389130_jdx613e3vos6pqfr/iconfont.css">
+  <script src="css/font_rtk4hl3smm42t9/iconfont.js"></script>
+</head>
+<body>
+    <!-- 登录 -->
+    <form action="" id="loginform">
+      <div id="loginbox">
+        <div class="login-title">账号登录</div>
+        <input type="text" 
+               style="margin-top: 50px;margin-bottom: 8px;" 
+               data-required
+               data-description='nickname'
+               id="nickname" 
+               data-describedby='msg'
+               placeholder="用户名">
+               <p id="msg" style="font-size: 12px;color:red;margin-left: 40px;margin-bottom: 8px"></p>
+        <input type="password"
+               data-required
+               data-description='pwd'
+               id="pwd"
+               data-describedby='pwdmsg'
+               placeholder="密码">
+               <p id="pwdmsg" style="font-size: 12px;color:red;margin-left: 40px;margin-top: 8px;"></p>
+        <a href="fillaccount.html"><span>忘记密码</span></a>
+        <button type="submit" id="loginbtn">登录</button>
+        <div class="xiaowai">
+          <a href="">统一身份认证</a>
+          <a href="notice.html" style="float: right;">校外用户注册</a>
+        </div>
+      </div>
+    </form>
+    <div class="device">
+      <!-- 顶部公共部分 -->
+      <!-- 头部登录 -->
+      <div class="header">    
+        <div class="w clearfix">
+          <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+          <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+          <div class="login">
+           <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+           <a href="notice.html" class="nihao">校外用户注册</a>
+           <a href="index.html">系统首页</a>
+          </div>
+        </div>
+      </div>
+      <!-- 平台成员导航 -->
+      <div class="topnav">
+        <ul class="w">
+          <li><a href="platforminfo.html">平台成员</a></li>
+          <li><a href="guizhang.html">规章制度</a></li>
+          <li><a href="kaifangyiqi.html">开放仪器</a></li>
+          <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+          <li><a href="wenda.html">问答咨询</a></li>
+          <li><a href="we.html">关于我们</a></li>
+        </ul>
+      </div>
+      <!-- 背景搜索 -->
+      <div class="bg"></div>
+      <!-- 顶部结束 -->
+      <!-- 通屏头部导航 -->
+      <div class="top-title">
+        <div class="w">
+          <a href="index.html" class="first">首页 > </a>
+          <a href="platforminfo.html" class="first">平台成员 > </a>
+          <a href="fenxi.html" class="first">分析中心 > </a>
+          <a href="javascript:void(0)" class="last">开发仪器</a>
+        </div>
+      </div>
+      <!-- 通屏头部导航结束 -->
+
+      <!-- 中间内容部分 -->
+      <div class="content w">
+        <!-- 仪器分类 -->
+        <!-- <div class="classfiy">
+          仪器分类
+        </div> -->
+        <div class="left-box">
+          <div class="topinfo">平台成员</div>
+          <div class="jianjie">
+           <ul>
+             <li>
+                 <a style="background-color:#178c5b;color: #fff;">分析中心 (68台)<span id="fx-down" 
+                  style="margin-right: 20px;font-size: 6px;float: right;" class="iconfont icon-zhankaijiantou"></span></a>
+                <ul id="fx-ul">
+                  <li><a href="shiyanshi.html" class="iconfont icon-quan">实验室介绍</a></li>
+                  <li><a href="shiyanshidongtai.html" class="iconfont icon-quan">实验室动态</a></li>
+                  <li><a href="fuwuzhinan.html" class="iconfont icon-quan">服务指南</a></li>
+                  <li><a href="ziliao.html" class="iconfont icon-quan">资料下载</a></li>
+                  <li><a href="devicelist.html" class="iconfont icon-quan" style="color: #178c5b;">开放仪器</a></li>
+                  <li><a href="shoufei.html" class="iconfont icon-quan">收费标准</a></li>
+                </ul>
+             </li>
+             <li><a href="">微纳加工平台</a></li>
+             <li><a href="">集成电路</a></li>
+             <li><a href="">化工系测试平台</a></li>
+           </ul>
+          </div>
+        </div>
+        <!-- 右侧主要内容 -->
+        <div class="rightbox">
+          <!-- 查询form表单 -->
+          <form action="" class="query">
+            <label for="">设备名称:</label>
+            <input type="text" name="" id="">
+            <label for="">型号:</label>
+            <input type="text" name="" id="">
+            
+            <div id="yincang" style="display: none;">
+              <label for="">应用领域:</label>
+              <input type="text" name="" id="">
+              <label for="">机组:</label>
+              <input type="text" name="" id="">
+              
+              <label for="">项目测试:</label>
+              <input type="text" name="" id="">
+            </div>
+            <div class="button">查询</div>
+            <div class="boto"><span class="iconfont icon-zhankaijiantou"></span></div>
+          </form>
+          <!-- 条件 -->
+          <div class="condition">
+            <span class="l">已选条件:</span>
+            <input type="text" placeholder="组织机构：云南大学">
+            <span class="r">清空条件</span>
+          </div>
+
+          <!-- 排序 -->
+          <div class="rank">
+            <span>新旧</span><span>使用状态</span><span>共享次数</span>
+          </div>
+          <!-- 列表排序 -->
+          <div class="list">
+            <div class="item">
+              <a href="firstdetail.html"><img src="images/yiqi.png" alt=""></a>
+              <dl class="first">
+                <dd style="width:150px;">120kV透射电子显微镜(Hitachi HT7700)</dd>
+                <dd style="color:#17c488">「使用中」</dd>
+              </dl>
+              <dl>
+                <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                <dd>所在地点:<span>综合楼A座113</dd>
+              </dl>
+              <dl class="danwei">
+                <dd>所属单位:<span>国家开放共享平台</span></dd>
+                <dd>所属分类:<span>电子设备</span></dd>
+              </dl>
+              <div class="selftest"><a href="javascript:void(0)" style="color: #17c488">自助测试</a></div>
+            </div>
+            <div class="item">
+              <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+              <dl class="first">
+                <dd style="width:150px;">120kV透射电子显微镜(Hitachi HT7700)</dd>
+                <dd style="color:#17c488">「使用中」</dd>
+              </dl>
+              <dl>
+                <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                <dd>所在地点:<span>综合楼A座113</dd>
+              </dl>
+              <dl class="danwei">
+                <dd>所属单位:<span>国家开放共享平台</span></dd>
+                <dd>所属分类:<span>电子设备</span></dd>
+              </dl>
+              <!-- <div class="selftest"><a href="selftest.html" style="color: #17c488">自助测试</a></div> -->
+              <!-- <div class="othertest"><a href="apply.html" style="color: #2072d1">委托测试</a></div> -->
+              <div class="othertest"><a href="javascript:void(0)" style="color: #2072d1;">委托测试</a></div>
+            </div>
+            <div class="item">
+              <a href="mix.html"><img src="images/yiqi.png" alt=""></a>
+              <dl class="first">
+                <dd style="width:150px;">120kV透射电子显微镜(Hitachi HT7700)</dd>
+                <dd style="color:#17c488">「使用中」</dd>
+              </dl>
+              <dl>
+                <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                <dd>所在地点:<span>综合楼A座113</dd>
+              </dl>
+              <dl class="danwei">
+                <dd>所属单位:<span>国家开放共享平台</span></dd>
+                <dd>所属分类:<span>电子设备</span></dd>
+              </dl>
+              <div class="selftest"><a href="javascript:void(0)" style="color: #17c488">自助测试</a></div>
+              <div class="othertest"><a href="javascript:void(0)" style="color: #2072d1">委托测试</a></div>
+            </div>
+          </div>
+
+          <!-- 分页按钮组 -->
+          <div class="pagebtn">
+            <div class="rr">
+              <div class="total">共344条</div>
+              <div class="arrbox">上一页</div>
+              <div class="btnbox">1</div>
+              <div class="btnbox">2</div>
+              <div class="btnbox">3</div>
+              <div class="btnbox">...</div>
+              <div class="arrbox">下一页</div>
+              <div class="next">跳转到</div>
+              <input type="text">页
+              <div class="btn">确定</div>
+            </div>
+          </div>
+          <!-- 分页结束 -->
+        </div>
+        <!-- 主要内容结束 -->
+      </div>
+      <!-- 中间内容部分结束 -->
+      <!-- 底部结尾部分 -->      
+      <div class="footer w">
+            <div class="links w">
+              <a href="#">友情链接:</a>
+              <a href="#">采购信息网</a>
+              <a href="#">实验室</a>
+              <a href="#">资产</a>
+              <a href="#">大型仪器设备共享</a>
+              <a href="#">实验室安全考试培训</a>
+              <a href="#">国家网络管理平台</a>
+              <a href="#">云南省大仪网</a>
+              <a href="#">某某高校</a>
+            </div>
+            <div class="copyright">
+              <p>云南大学 &nbsp;版权所有 &nbsp; 主管部门:&nbsp;云南大学实验室设备管理处&nbsp;技术支持:久其软件</p>
+              <br/>
+              <span>首页访问次数</span><span>1101次</span>
+            </div>              
+      </div>
+      <!-- 底部结束 -->
+    </div>
+    <!-- 委托测试弹出 -->
+    <div class="jiance-btn">
+      <div class="table">
+        <table>
+          <tr>
+            <th><input type="checkbox">电子电器检测</th>
+            <th>计价单位</th>
+            <th>校内价</th>
+            <th>校外价</th>
+            <th>院内价</th>
+            <th>收费类型</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td>单一有机化合物含量测定</td>
+            <td>元／小时</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>自助上机时费</td>
+            <td>备注</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <tr>
+            <th><input type="checkbox">电磁兼容检测</th>
+            <th>计价单位</th>
+            <th>校内价</th>
+            <th>校外价</th>
+            <th>院内价</th>
+            <th>收费类型</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td>单一有机化合物含量测定</td>
+            <td>元／小时</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>自助上机时费</td>
+            <td>备注</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <tr>
+            <th><input type="checkbox">可靠性测试</th>
+            <th>计价单位</th>
+            <th>校内价</th>
+            <th>校外价</th>
+            <th>院内价</th>
+            <th>收费类型</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td>单一有机化合物含量测定</td>
+            <td>元／小时</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>自助上机时费</td>
+            <td>备注</td>
+          </tr>
+        </table>
+      </div>
+      <div class="table">
+        <table>
+          <tr>
+            <th><input type="checkbox">医药检测</th>
+            <th>计价单位</th>
+            <th>校内价</th>
+            <th>校外价</th>
+            <th>院内价</th>
+            <th>收费类型</th>
+            <th>备注</th>
+          </tr>
+          <tr>
+            <td>单一有机化合物含量测定</td>
+            <td>元／小时</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>100.00</td>
+            <td>自助上机时费</td>
+            <td>备注</td>
+          </tr>
+        </table>
+      </div>
+      <button id="jiance-next">下一步</button>
+    </div>
+    <!-- 自助测试弹出 -->
+    <div class="big-box">
+      <div class="table-title">「刘向」预约120KV透射电子显微镜资格审查</div>
+      <table class="self-table">
+        <tr>
+          <th>序号</th>
+          <th>项目检测</th>
+          <th>项目值</th>
+          <th>结果</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>用户状态</td>
+          <td>审核通过</td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>不良行为</td>
+          <td></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>设备黑名单</td>
+          <td></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>公告阅读</td>
+          <td></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>申请培训</td>
+          <td><span class="wsq">未提交培训申请</span><span class="sq">申请培训</span></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>使用设备权限</td>
+          <td>有权限</td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>所属机构在线测试</td>
+          <td></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>仪器设备在线考试</td>
+          <td></td>
+          <td><img src="images/bingo.png" alt=""></td>
+        </tr>
+      </table>
+      <button id="yy-btn">开始预约</button>
+    </div>
+    <!-- 预约日历弹出 -->
+    <div class="tan-yuyue">
+      <div class="yuyue">
+        <div class="toptable">
+          <img src="images/yuyuer.png" alt="" class="l">
+          <span class="m">2017-06-25～2017-07-01</span>
+          <img src="images/yuyuel.png" alt="" class="r">
+          <img src="images/today.png" alt="" style="float: right;margin-top: 10px;margin-right: 20px;">
+        </div>
+        <table>
+          <tr>
+            <td>预约时间段</td>
+            <td>06.25星期天</td>
+            <td>06.26星期一</td>
+            <td>06.27星期二</td>
+            <td>06.28星期三</td>
+            <td>06.29星期四</td>
+            <td>06.30星期五</td>
+            <td>07.01星期六</td>
+          </tr>
+          <tr>
+            <td>00:00-00:15</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td><img src="images/self.png" alt=""></td>
+            <td>可预约</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+          </tr>
+          <tr>
+            <td>00:15-00:30</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td><img src="images/other.png" alt=""></td>
+            <td>可预约</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+          </tr><tr>
+            <td>00:30-00:45</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td><img src="images/other.png" alt=""></td>
+            <td>可预约</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+          </tr><tr>
+            <td>00:45-01:00</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td><img src="images/self.png" alt=""></td>
+            <td>可预约</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+          </tr>
+          <tr>
+            <td>01:00-01:15</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td>可预约</td>
+            <td><img src="images/self.png" alt=""></td>
+            <td>可预约</td>
+            <td style="background-color: #f6f6f6;">不可预约</td>
+          </tr>
+        </table>
+        <div class="bottom">
+          <span class="l" style="width:75px;">开放时间:</span>
+          <span class="r">0:00-24:00</span>
+          <span class="l" style="width:100px;">工作日:</span>
+          <span class="r">周日-周六</span>
+          <span class="l" style="width:126px;">预约时间单位:</span>
+          <span class="r">15分钟</span>
+          <div>
+            <span class="l" style="width:75px;">收费标准:</span>
+            <span class="r">0元/</span>
+            <span class="l" style="width:100px;">最多提前预约:</span>
+            <span class="r">20天</span>
+            <span class="l" style="width:126px;">最少提前预约时间:</span>
+            <span class="r">1分钟</span>
+          </div>
+          <!-- 图标提示 -->
+          <div class="icon">
+            <img src="images/bingo.png" alt="">已选择
+            <img src="images/self.png" alt="">自己预约
+            <img src="images/other.png" alt="">他人预约
+          </div>
+        </div>
+        <button id="tan-next">下一步</button>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="assets/layer/layer.js"></script>
+    <script src="assets/Validate-master/jquery-validate.min.js"></script>
+    <script src="assets/form-master/jquery.form.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        $(function(){
+          $('#fx-down').on('click',function(){
+            
+            if($(this).hasClass("icon-shouqijiantou")){
+              $('#fx-ul').show(500);
+              $(this).addClass('icon-zhankaijiantou');
+              $(this).removeClass('icon-shouqijiantou');
+            }else{
+              $('#fx-ul').hide(500);
+              $(this).addClass('icon-shouqijiantou');
+              $(this).removeClass('icon-zhankaijiantou');
+            }
+          })
+          // form下拉箭头事件
+          $('.rightbox .boto span').on('click',function(){
+            if($(this).hasClass("icon-shouqijiantou")){
+              $('#yincang').hide(500)
+              $(this).addClass('icon-zhankaijiantou');
+              $(this).removeClass('icon-shouqijiantou');
+            }else{
+              $('#yincang').show(500);              
+              $(this).addClass('icon-shouqijiantou');
+              $(this).removeClass('icon-zhankaijiantou');
+            }
+          })
+        });//end $function        
+    </script>
+    <script>
+      // 测试点击事件
+      $(function(){
+        $('.selftest').on('click',function(){
+          layer.open({
+            type: 1,
+            title:false,
+            area: ['801px', '530px'], //宽高
+            content: $('.big-box')
+          });       
+        });
+        $('#yy-btn').on('click',function(){
+          layer.closeAll();//关闭弹窗
+          layer.open({
+            type: 1,
+            title:false,
+            area: ['1200px', '450px'], //宽高
+            content:$('.tan-yuyue')
+          });          
+        })
+        $('#tan-next').on('click',function(){
+          window.location.href='selftest.html';
+        })
+        $('.othertest').on('click',function(){
+          layer.open({
+            type: 1,
+            title:'检测项目',
+            area: ['1200px', '450px'],
+            content:$('.jiance-btn')
+          });
+          $('#jiance-next').on('click',function(){
+            window.location.href='apply.html';
+          })          
+        });
+
+      })
+    </script>
+    
+  
+</body>
+</html>
