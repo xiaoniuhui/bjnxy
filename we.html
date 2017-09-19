@@ -43,7 +43,7 @@
     <div class="header">    
             <div class="w clearfix">
               <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
-              <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+              <a href="index.html" class="yunda">北京农学院大型仪器设备共享平台</a>
               <div class="login">
                <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
                <a href="notice.html" class="nihao">校外用户注册</a>
@@ -58,19 +58,18 @@
         <li><a href="guizhang.html">规章制度</a></li>
         <li><a href="kaifangyiqi.html">开放仪器</a></li>
         <li><a href="shoufeibiaozhun.html">收费标准</a></li>
-        <li><a href="wenda.html">问答咨询</a></li>
         <li><a href="we.html">关于我们</a></li>
       </ul>
     </div>
     <!-- 头部结束 -->
     <!-- 背景搜索 -->
-    <div class="bg"></div>
+    <div class="bg">艰苦奋斗，勤于实践，崇尚科学，面向基层</div>
     <!-- 背景搜索结束 -->
     <div class="weinfo w">
       <!-- 关于我们 -->
       <div class="top-title">
         <h1>关于我们</h1>
-        <p>云南大学大型仪器共享平台，是适应社会发展需要的，共享共赢的一个支撑系统。</p>
+        <p>北京农学院大型仪器设备共享平台，是适应社会发展需要的，共享共赢的一个支撑系统。</p>
         <p>目前平台架构功能已初步实现，各项共享服务交流程已处于使用阶段，请各大型仪器所在单位抓紧完善设备信息，</p>
         <p>试用平台各项功能，及时反馈意见和建议给我们，以便尽快完善平台预期的功能，尽早应用共享平台。谢谢！</p>
       </div>
@@ -85,7 +84,7 @@
     </div>
     <!-- 提示信息 -->
     <div class="m-info">
-      <div class="top-title">云南大学大型仪器设备共享平台</div>
+      <div class="top-title">北京农学院大型仪器设备共享平台</div>
       <div class="m-items">
         <div class="item">
           <img src="images/fax.png" alt="">
@@ -100,12 +99,12 @@
         <div class="item">
           <img src="images/dizhi.png" alt="">
           <span>单位地址</span>
-          <h6>云南省昆明市五华区翠湖北路2号</h6>
+          <h6>北京市昌平区回龙观北朱辛庄北农路7号</h6>
         </div>
         <div class="item">
           <img src="images/post.png" alt="">
           <span>邮政编码</span>
-          <h6>650091</h6>
+          <h6>102206</h6>
         </div>
       </div>      
     </div>
@@ -113,20 +112,11 @@
       <div class="box demo2">
         <ul class="tab_menu">
           <div class="w">
-            <li class="current" style="float: left;margin-left: 100px;">呈贡校区</li>
-            <li style="float: right;margin-right: 100px;">东陆校区</li>
+            <li class="current" style="text-align: center;">北京农学院</li>
           </div>
         </ul>
         <div class="tab_box">
           <div id="map1_container"><div id="allmap1"></div></div>
-          <div id="map2_container" class="hide"><div id="allmap2"></div></div>
-          
-
-
-          <!-- <div id="allmap"></div>          
-          <div class="hide">
-            <div id="allmap-cuihu"></div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -163,57 +153,16 @@
     $('.demo2').Tabs({
       timeout:300
     });    
-  </script>
-  <script type="text/javascript">
-      // 百度地图API功能
-      // var map = new BMap.Map('allmap');
-      // // 102.857014,24.833153 呈贡校区
-      // // 102.708574,25.060198东陆校区
-      // var poi = new BMap.Point(102.857014,24.833153);
-      // map.centerAndZoom(poi, 16);
-      // map.enableScrollWheelZoom();
-      // var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-      //                 '地址：理工楼D102室' +
-      //               '</div>';
-
-      // //创建检索信息窗口对象
-      // var searchInfoWindow = null;
-      // searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
-      //   title  : "云南大学呈贡校区",      //标题
-      //   width  : 290,             //宽度
-      //   height : 105,              //高度
-      //   panel  : "panel",         //检索结果面板
-      //   enableAutoPan : true,     //自动平移
-      //   searchTypes   :[
-      //     BMAPLIB_TAB_SEARCH,   //周边检索
-      //     BMAPLIB_TAB_TO_HERE,  //到这里去
-      //     BMAPLIB_TAB_FROM_HERE //从这里出发
-      //   ]
-      // });
-      // var marker = new BMap.Marker(poi); //创建marker对象
-      // marker.enableDragging(); //marker可拖拽
-      // marker.addEventListener("click", function(e){
-      //   searchInfoWindow.open(marker);
-      // })
-      // map.addOverlay(marker); //在地图中添加marker
-      // searchInfoWindow.open(marker);//默认显示检索信息
-  </script>
+  </script>  
   <script>
     //百度地图API功能
     //加载第一张地图
     var map1 = new BMap.Map("allmap1");            // 创建Map实例
-    var point1 = new BMap.Point(102.857014,24.833153);  
+    var point1 = new BMap.Point(116.31473,40.099617);  
     map1.centerAndZoom(point1,15);               
     // map1.enableScrollWheelZoom();                  //启用滚轮放大缩小
     var marker = new BMap.Marker(point1);  // 创建标注
-    map1.addOverlay(marker);
-    //加载第二张地图
-    var map2 = new BMap.Map("allmap2");            // 创建Map实例
-    var point2 = new BMap.Point(102.708574,25.060198); 
-    map2.centerAndZoom(point2,15);                 
-    // map2.enableScrollWheelZoom();                  //启用滚轮放大缩小
-    var marker2 = new BMap.Marker(point2);  // 创建标注
-    map2.addOverlay(marker2);
+    map1.addOverlay(marker);    
   </script>
 </body>
 </html>

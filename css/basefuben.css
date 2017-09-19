@@ -85,9 +85,47 @@ input{
   clear: both;
   width: 100%;
   background-color: #f5f5f5;
+  
 }
+.topnav .gundong{
+  position: absolute;
+  width: 500px;
+  height: 52px;
+  top: 0;
+  right: 0;
+  cursor: pointer;  
+}
+.topnav .gundong .gd-item{
+  line-height: 1;
+  width: 200px;
+  font-size: 20px;
+  color: #262626;
+  margin-top: 16px;
+  position: absolute;
+  animation: tongzhi 20s linear;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+}
+.topnav .gundong .gd-item:hover{
+  animation-play-state:paused;
+}
+@keyframes tongzhi {
+  0%{
+    left:0px;top:0px;
+  }
+  50%{
+    left:300px;top:0px;
+  }
+  to{
+    left: 0px;top: 0px;
+  }
+}
+
+
 .topnav ul{
   overflow: hidden;
+  position: relative;
 }
 .topnav ul li{
   float: left;

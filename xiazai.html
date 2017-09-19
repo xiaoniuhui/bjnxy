@@ -40,7 +40,7 @@
     <div class="header">    
       <div class="w clearfix">
         <div class="logo"><img src="images/logo.png" alt=""></div>
-        <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
+        <a href="index.html" class="yunda">北京农学院大型仪器设备共享平台</a>
         <div class="login">
           <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
           <a href="notice.html" class="nihao">校外用户注册</a>
@@ -55,13 +55,12 @@
         <li><a href="guizhang.html">规章制度</a></li>
         <li><a href="devicelist.html">开放仪器</a></li>
         <li><a href="shoufeibiaozhun.html">收费标准</a></li>
-        <li><a href="wenda.html">问答咨询</a></li>
         <li><a href="we.html">关于我们</a></li>
       </ul>
     </div>
     <!-- 头部结束 -->
     <!-- 背景搜索 -->
-    <div class="bg"></div>
+    <div class="bg">艰苦奋斗，勤于实践，崇尚科学，面向基层</div>
     <!-- 背景搜索结束 -->
     <!-- 通屏头部导航 -->
     <div class="top-title">
@@ -218,7 +217,7 @@
       </div>
       <!-- 内容列表结束 -->
       <!-- 分页按钮组 -->
-      <div class="pagebtn">
+      <!-- <div class="pagebtn">
         <div class="rr">
           <div class="total">共344条</div>
           <div class="arrbox">上一页</div>
@@ -231,7 +230,7 @@
           <input type="text">页
           <div class="btn">确定</div>
         </div>
-      </div>
+      </div> -->
     </div>  <!-- right-box结束 -->
   </div>
   <!-- 中间内容结束 -->
@@ -261,5 +260,12 @@
   <script src="assets/Validate-master/jquery-validate.min.js"></script>
   <script src="assets/form-master/jquery.form.js"></script>
   <script src="js/login.js"></script>
+  <script>
+    $(function(){
+      $('.list').on('click','.item',function(){
+        window.location.href='tongzhidetail.html';
+      })
+    })
+  </script>
 </body>
 </html>

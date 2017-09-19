@@ -299,15 +299,15 @@
   padding-left: 30px;
 }
 .index .public .right .top .title p{
-  font-family:PingFangSC-Light;
   font-size:14px;
   color:#178c5b;
   margin-bottom: 10px;
 }
 .index .public .right .top .title h6{
-  font-family:PingFangSC-Regular;
-  font-size:16px;
-  color:#333333;
+  font-size: 14px;
+  color: #666666;
+  line-height: 30px;
+  cursor: pointer;
 }
 .index .public .right .bottom{
   width: 100%;
@@ -324,6 +324,10 @@
   line-height: 40px;
   border-bottom: 1px solid #efefef;
   overflow: hidden;
+  cursor: pointer;
+}
+.list .item:hover{
+  background-color: #F9F9F9;
 }
  .list .l-i-left{
   width: 500px;

@@ -37,7 +37,6 @@
 }
 /*头部二级背景结束*/
 
-
 /*顶部面板导航*/
 .top-title{
   width: 100%;
@@ -61,14 +60,14 @@
   color:#178c5b;
 }
 /*左侧内容*/
-.fenxi{
+.shiyanshi{
   overflow: hidden;
 }
-.fenxi .left-box{
+.shiyanshi .left-box{
   float: left;
   margin-top: 10px;
 }
-.fenxi .left-box .topinfo{
+.shiyanshi .left-box .topinfo{
   width: 250px;
   height: 40px;
   line-height: 40px;
@@ -77,21 +76,20 @@
   background-color: #f9f9f9;
   color: #444;
 }
-.fenxi .left-box .jianjie{
+.shiyanshi .left-box .jianjie{
   width: 250px;
   background-color: #f9f9f9;
   margin-top: 10px;
   box-sizing: border-box;
 }
-.fenxi .left-box .jianjie .xuanzhong{
+.shiyanshi .left-box .jianjie .xuanzhong{
   background-color: #178c5b;
   color: #fff;
 }
-.fenxi .left-box .jianjie li{
-  /*padding-left: 20px;*/
+.shiyanshi .left-box .jianjie li{
   border-bottom: 1px solid #eee;
 }
-.fenxi .left-box .jianjie li a{
+.shiyanshi .left-box .jianjie li a{
   font-family:MicrosoftYaHei;
   font-size:14px;
   color: #444;
@@ -100,32 +98,32 @@
   padding-left: 20px;
   line-height: 39px;
 }
-.fenxi .left-box .jianjie li ul li a:hover{
+.shiyanshi .left-box .jianjie li ul li a:hover{
   color:#178c5b;
 }
-.fenxi .left-box .jianjie li ul li{
+.shiyanshi .left-box .jianjie li ul li{
   border:none;
 }
 /*左侧内容结束*/
 
 /*右侧内容*/
-.fenxi .right-box{
+.shiyanshi .right-box{
   width: 870px;
   float: left;
   margin-left: 40px;
   margin-top: 28px;
 }
 /*公共导航*/
-.fenxi .right-box .top-nav{
+.shiyanshi .right-box .top-nav{
   overflow: hidden;
 }
-.fenxi .right-box .top-nav .left-border{
+.shiyanshi .right-box .top-nav .left-border{
   background:#178c5b;
   width:2px;
   height:20px;
   float: left;
 }
-.fenxi .right-box .top-nav span{
+.shiyanshi .right-box .top-nav span{
   float: left;
   font-family:MicrosoftYaHei;
   font-size:20px;
@@ -133,9 +131,9 @@
   line-height: 1;
   margin-left: 9px;
 }
-.fenxi .right-box .top-nav .right-border{
+.shiyanshi .right-box .top-nav .right-border{
   background:#9b9b9b;
-  width:760px;
+  width:740px;
   height:1px;
   float: right;
   margin-top: 12px;
@@ -145,70 +143,41 @@
 
 
 
-
-
-/*分析文字*/
-.fenxi .right-box .fenxi-p{
+/*实验室介绍*/
+.shiyanshi .right-box .top-p{
+  margin-top: 32px;
+  text-align: center;
+}
+.shiyanshi .right-box .top-p p{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.shiyanshi .right-box .top-p span{
   font-family:MicrosoftYaHei;
   font-size:14px;
   color:#5e5e5e;
   line-height:26px;
-  margin-top: 34px;
-  margin-bottom: 30px;
+  margin-right: 10px;
 }
-/*设备分类盒子*/
-.fenxi .right-box .items{
-  width: 870px;
-  margin-top: 34px;
-  margin-bottom: 50px;
-  overflow: hidden;
+/*文字简介*/
+.shiyanshi .right-box .title-p{
+  margin-top: 20px;
 }
-.fenxi .right-box .items .item{
-  border:1px solid #444444;
-  width:180px;
-  height:44px;
-  font-family:MicrosoftYaHei;
-  font-size:14px;
-  color:#5e5e5e;
-  line-height:44px;
-  padding-left: 20px;
-  box-sizing: border-box;
-  float: left;
-  margin-right: 30px;
-  margin-bottom: 14px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*项目检测*/
-.fenxi .right-box .test{
-  margin-top: 34px;
-  margin-bottom: 50px;
-}
-.fenxi .right-box .test .list{
-  margin-bottom: 22px;
-}
-.fenxi .right-box .test p{
-  margin-left: 12px;
+.shiyanshi .right-box .title-p p{
   font-family:MicrosoftYaHei;
   font-size:14px;
   color:#5e5e5e;
   line-height:26px;
+  margin-bottom: 5px;
+  text-indent: 2em;
 }
-.fenxi .right-box .test span{
-  font-family:MicrosoftYaHei;
-  font-size:12px;
-  color:#178c5b;
-  margin-left: 12px;
-  margin-right: 20px;
+.shiyanshi .right-box .title-p h4{
+  text-indent: 2em;
+  margin-bottom: 10px;
 }
-/*服务领域盒子*/
+
+
+
+
+
+
