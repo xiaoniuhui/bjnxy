@@ -351,35 +351,10 @@
   float: right;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*仪器排行榜*/
 .index .rank{
   width:100%;
-  margin-top: 45px;
+  // margin-top: 45px;
   background-image: url(../images/bg.png);
   text-align: center;
   padding-top: 28px;

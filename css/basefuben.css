@@ -113,13 +113,12 @@ input{
 }
 .search .title p{
   margin-top: 40px;
+  margin-bottom: 10px;
   font-family:MicrosoftYaHei;
   font-size:30px;
   color:#ffffff;
 }
 .search .title span{
-  margin-top: 12px;
-  font-family:MicrosoftYaHei;
   font-size:18px;
   color:#ffffff;
 }
@@ -129,7 +128,7 @@ input{
   width:746px;
   height:60px;
   overflow: hidden;
-  margin-top: 33px;
+  margin-top: 23px;
 }
 .search .sousuo input{
   width: 681px;

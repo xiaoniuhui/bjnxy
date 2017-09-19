@@ -9,19 +9,364 @@
   <link rel="stylesheet" href="css/devicedetail.css">
   <style type="text/css">
       /* box */
-      .box{width:1180px;margin:10px auto 0;background:#fff;}
-      .tab_menu{overflow: hidden;background-color:#F9F9F9;}
-      /*.tab_menu{overflow:hidden;}*/
-      .tab_menu li{width:100px;float:left;height:40px;line-height:40px;text-align:center;cursor:pointer;}
-      .tab_menu li.current{color:#333;background:#178c5b;color:#fff;}
-      .tab_box{height: 400px;overflow: hidden;}
-      .tab_box li{height:24px;line-height:24px;overflow:hidden;}
-      .tab_box .hide{display:none;}
-      #allmap {height: 400px;width:1180px;}
+    .box{width:1180px;margin:10px auto 0;background:#fff;}
+    .tab_menu{overflow: hidden;background-color:#F9F9F9;}
+    .tab_menu{width:1180px;}
+    .tab_menu li{width:90px;float:left;height:40px;line-height:40px;text-align:center;cursor:pointer;}
+    .tab_menu li.current{color:#333;background:#178c5b;color:#fff;}
+    .tab_box{/*height: 400px;overflow: hidden;*/}
+    .tab_box li{height:24px;line-height:24px;overflow:hidden;}
+    .tab_box .hide{display:none;}
+    #allmap {height: 400px;width:1180px;}
+    #canvas {
+      position:absolute;
+      width:1180px;
+      background:#fff;
+    }
   </style>
   <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=PkUezjUoaFnwdhgGrefx3XpxjilIKRHO"></script>
   <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
   <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css" />
+  <script type="text/javascript" src="js/ge1doot.js"></script>
+  <script type="text/javascript">
+    "use strict";
+    (function () {
+      /* ==== definitions ==== */
+      var diapo = [], layers = [], ctx, pointer, scr, camera, light, fps = 0, quality = [1,2],
+      // ---- poly constructor ----
+      Poly = function (parent, face) {
+        this.parent = parent;
+        this.ctx    = ctx;
+        this.color  = face.fill || false;
+        this.points = [];
+        if (!face.img) {
+          // ---- create points ----
+          for (var i = 0; i < 4; i++) {
+            this.points[i] = new ge1doot.transform3D.Point(
+              parent.pc.x + (face.x[i] * parent.normalZ) + (face.z[i] * parent.normalX),
+              parent.pc.y +  face.y[i],
+              parent.pc.z + (face.x[i] * parent.normalX) + (-face.z[i] * parent.normalZ)
+            );
+          }
+          this.points[3].next = false;
+        }
+      },
+      // ---- diapo constructor ----
+      Diapo = function (path, img, structure) {
+        // ---- create image ----
+        this.img = new ge1doot.transform3D.Image(
+          this, path + img.img, 1, {
+            isLoaded: function(img) {
+              img.parent.isLoaded = true;
+              img.parent.loaded(img);
+            }
+          }
+        );
+        this.visible  = false;
+        this.normalX  = img.nx;
+        this.normalZ  = img.nz;
+        // ---- point center ----
+        this.pc = new ge1doot.transform3D.Point(img.x, img.y, img.z);
+        // ---- target positions ----
+        this.tx = img.x + (img.nx * Math.sqrt(camera.focalLength) * 20);
+        this.tz = img.z - (img.nz * Math.sqrt(camera.focalLength) * 20);
+        // ---- create polygons ----
+        this.poly = [];
+        for (var i = -1, p; p = structure[++i];) {
+          layers[i] = (p.img === true ? 1 : 2);
+          this.poly.push(
+            new Poly(this, p)
+          );
+        }
+      },
+      // ---- init section ----
+      init = function (json) {
+        // draw poly primitive
+        Poly.prototype.drawPoly = ge1doot.transform3D.drawPoly;
+        // ---- init screen ----
+        scr = new ge1doot.Screen({
+          container: "canvas"
+        });
+        ctx = scr.ctx;
+        scr.resize();
+        // ---- init pointer ----
+        pointer = new ge1doot.Pointer({
+          tap: function () {
+            if (camera.over) {
+              if (camera.over === camera.target.elem) {
+                // ---- return to the center ----
+                camera.target.x = 0;
+                camera.target.z = 0;
+                camera.target.elem = false;
+              } else {
+                // ---- goto diapo ----
+                camera.target.elem = camera.over;
+                camera.target.x = camera.over.tx;
+                camera.target.z = camera.over.tz;
+                // ---- adapt tesselation level to distance ----
+                for (var i = 0, d; d = diapo[i++];) {
+                  var dx = camera.target.x - d.pc.x;
+                  var dz = camera.target.z - d.pc.z;
+                  var dist = Math.sqrt(dx * dx + dz * dz);
+                  var lev = (dist > 1500) ? quality[0] : quality[1];
+                  d.img.setLevel(lev);
+                }
+              }
+            }
+          }
+        });
+        // ---- init camera ----
+        camera = new ge1doot.transform3D.Camera({
+          focalLength: Math.sqrt(scr.width) * 10,
+          easeTranslation: 0.025,
+          easeRotation: 0.06,
+          disableRz: true
+        }, {
+          move: function () {
+            this.over = false;
+            // ---- rotation ----
+            if (pointer.isDraging) {
+              this.target.elem = false;
+              this.target.ry = -pointer.Xi * 0.01;
+              this.target.rx = (pointer.Y - scr.height * 0.5) / (scr.height * 0.5);
+            } else {
+              if (this.target.elem) {
+                this.target.ry = Math.atan2(
+                  this.target.elem.pc.x - this.x,
+                  this.target.elem.pc.z - this.z
+                );
+              }
+            }
+            this.target.rx *= 0.9;
+          }
+        });
+        camera.z  = -10000;
+        camera.py = 0;
+        // ---- create images ----
+        for (var i = 0, img; img = json.imgdata[i++];) {
+          diapo.push(
+            new Diapo(
+              json.options.imagesPath, 
+              img, 
+              json.structure
+            )
+          );
+        } 
+        // ---- start engine ---- >>>
+        setInterval(function() {
+          quality = (fps > 50) ? [2,3] : [1,2];
+          fps = 0;
+        }, 1000);
+        run();
+      },
+      // ---- main loop ----
+      run = function () {
+        // ---- clear screen ----
+        ctx.clearRect(0, 0, scr.width, scr.height);
+        // ---- camera ----
+        camera.move();
+        // ---- draw layers ----
+        for (var k = -1, l; l = layers[++k];) {
+          light = false;
+          for (var i = 0, d; d = diapo[i++];) {
+            (l === 1 && d.draw()) || 
+            (d.visible && d.poly[k].draw());
+          }
+        }
+        // ---- cursor ----
+        if (camera.over && !pointer.isDraging) {
+          scr.setCursor("pointer");
+        } else {
+          scr.setCursor("move");
+        }
+        // ---- loop ----
+        fps++;
+        requestAnimFrame(run);
+      };
+      /* ==== prototypes ==== */
+      Poly.prototype.draw = function () {
+        // ---- color light ----
+        var c = this.color;
+        if (c.light || !light) {
+          var s = c.light ? this.parent.light : 1;
+          // ---- rgba color ----
+          light = "rgba(" + 
+            Math.round(c.r * s) + "," +
+            Math.round(c.g * s) + "," + 
+            Math.round(c.b * s) + "," + (c.a || 1) + ")";
+          ctx.fillStyle = light;
+        }
+        // ---- paint poly ----
+        if (!c.light || this.parent.light < 1) {
+          // ---- projection ----
+          for (
+            var i = 0; 
+            this.points[i++].projection();
+          );
+          this.drawPoly();
+          ctx.fill();
+        }
+      }
+      /* ==== image onload ==== */
+      Diapo.prototype.loaded = function (img) {
+        // ---- create points ----
+        var d = [-1,1,1,-1,1,1,-1,-1];
+        var w = img.texture.width  * 0.5;
+        var h = img.texture.height * 0.5;
+        for (var i = 0; i < 4; i++) {
+          img.points[i] = new ge1doot.transform3D.Point(
+            this.pc.x + (w * this.normalZ * d[i]),
+            this.pc.y + (h * d[i + 4]),
+            this.pc.z + (w * this.normalX * d[i])
+          );
+        }
+      }
+      /* ==== images draw ==== */
+      Diapo.prototype.draw = function () {
+        // ---- visibility ----
+        this.pc.projection();
+        if (this.pc.Z > -(camera.focalLength >> 1) && this.img.transform3D(true)) {
+          // ---- light ----
+          this.light = 0.5 + Math.abs(this.normalZ * camera.cosY - this.normalX * camera.sinY) * 0.6;
+          // ---- draw image ----
+          this.visible = true;
+          this.img.draw();
+          // ---- test pointer inside ----
+          if (pointer.hasMoved || pointer.isDown) {
+            if (
+              this.img.isPointerInside(
+                pointer.X,
+                pointer.Y
+              )
+            ) camera.over = this;
+          }
+        } else this.visible = false;
+        return true;
+      }
+      return {
+        // --- load data ----
+        load : function (data) {
+          window.addEventListener('load', function () {
+            ge1doot.loadJS(
+              "js/imageTransform3D.js",
+              init, data
+            );
+          }, false);
+        }
+      }
+    })().load({
+      imgdata:[
+        // north
+        {img:'images/tu1.png', x:-1000, y:0, z:1500, nx:0, nz:1},
+        {img:'images/tu2.png', x:0,     y:0, z:1500, nx:0, nz:1},
+        {img:'images/tu3.png', x:1000,  y:0, z:1500, nx:0, nz:1},
+        // east
+        {img:'images/tu4.png', x:1500,  y:0, z:1000, nx:-1, nz:0},
+        {img:'images/tu5.png', x:1500,  y:0, z:0, nx:-1, nz:0},
+        {img:'images/tu1.png', x:1500,  y:0, z:-1000, nx:-1, nz:0},
+        // south
+        {img:'images/tu2.png', x:1000,  y:0, z:-1500, nx:0, nz:-1},
+        {img:'images/tu3.png', x:0,     y:0, z:-1500, nx:0, nz:-1},
+        {img:'images/tu4.png', x:-1000, y:0, z:-1500, nx:0, nz:-1},
+        // west
+        {img:'images/tu5.png', x:-1500, y:0, z:-1000, nx:1, nz:0},
+        {img:'images/tu1.png', x:-1500, y:0, z:0, nx:1, nz:0},
+        {img:'images/tu2.png', x:-1500, y:0, z:1000, nx:1, nz:0}
+      ],
+      structure:[
+        {
+          // wall
+          fill: {r:255, g:255, b:255, light:1},
+          x: [-1001,-490,-490,-1001],
+          z: [-500,-500,-500,-500],
+          y: [500,500,-500,-500]
+        },{
+          // wall
+          fill: {r:255, g:255, b:255, light:1},
+          x: [-501,2,2,-500],
+          z: [-500,-500,-500,-500],
+          y: [500,500,-500,-500]
+        },{
+          // wall
+          fill: {r:255, g:255, b:255, light:1},
+          x: [0,502,502,0],
+          z: [-500,-500,-500,-500],
+          y: [500,500,-500,-500]
+        },{
+          // wall
+          fill: {r:255, g:255, b:255, light:1},
+          x: [490,1002,1002,490],
+          z: [-500,-500,-500,-500],
+          y: [500,500,-500,-500]
+        },{
+          // shadow
+          fill: {r:0, g:0, b:0, a:0.2},
+          x: [-420,420,420,-420],
+          z: [-500,-500,-500,-500],
+          y: [150, 150,-320,-320]
+        },{
+          // shadow
+          fill: {r:0, g:0, b:0, a:0.2},
+          x: [-20,20,20,-20],
+          z: [-500,-500,-500,-500],
+          y: [250, 250,150,150]
+        },{
+          // shadow
+          fill: {r:0, g:0, b:0, a:0.2},
+          x: [-20,20,20,-20],
+          z: [-500,-500,-500,-500],
+          y: [-320, -320,-500,-500]
+        },{
+          // shadow
+          fill: {r:0, g:0, b:0, a:0.2},
+          x: [-20,20,10,-10],
+          z: [-500,-500,-100,-100],
+          y: [-500, -500,-500,-500]
+        },{
+          // base
+          fill: {r:32, g:32, b:32},
+          x: [-50,50,50,-50],
+          z: [-150,-150,-50,-50],
+          y: [-500,-500,-500,-500]
+        },{
+          // support
+          fill: {r:16, g:16, b:16},
+          x: [-10,10,10,-10],
+          z: [-100,-100,-100,-100],
+          y: [300,300,-500,-500]
+        },{
+          // frame
+          fill: {r:255, g:255, b:255},
+          x: [-320,-320,-320,-320],
+          z: [0,-20,-20,0],
+          y: [-190,-190,190,190]
+        },{
+          // frame
+          fill: {r:255, g:255, b:255},
+          x: [320,320,320,320],
+          z: [0,-20,-20,0],
+          y: [-190,-190,190,190]
+        },
+        {img:true},
+        {
+          // ceilingLight
+          fill: {r:255, g:128, b:0},
+          x: [-50,50,50,-50],
+          z: [450,450,550,550],
+          y: [500,500,500,500]
+        },{
+          // groundLight
+          fill: {r:255, g:128, b:0},
+          x: [-50,50,50,-50],
+          z: [450,450,550,550],
+          y: [-500,-500,-500,-500]
+        }
+      ],
+      options:{
+        imagesPath: ""
+      }
+    });
+    </script>
 </head>
 <body>
   <!-- 登录 -->
@@ -52,33 +397,30 @@
       </div>
   </form>
   <div class="devicedetail">
-      <div>
-          <!-- 头部登录 -->
-          <div class="header">    
-            <div class="w clearfix">
-              <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
-              <a href="index.html" class="yunda">云南大学大型仪器设备共享平台</a>
-              <div class="login">
-                 <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
-                 <a href="notice.html" class="nihao">校外用户注册</a>
-                 <a href="index.html">系统首页</a>
-              </div>
-            </div>
+      <!-- 头部登录 -->
+      <div class="header">    
+        <div class="w clearfix">
+          <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+          <a href="index.html" class="yunda">北京农学院大型仪器平台</a>
+          <div class="login">
+             <a href="javascript:void(0)" class="nihao" id="login">您好，请登录</a>
+             <a href="notice.html" class="nihao">校外用户注册</a>
+             <a href="index.html">系统首页</a>
           </div>
-          <!-- 平台成员导航 -->
-          <div class="topnav">
-            <ul class="w">
-              <li><a href="platforminfo.html">平台成员</a></li>
-              <li><a href="guizhang.html">规章制度</a></li>
-              <li><a href="devicelist.html">开放仪器</a></li>
-              <li><a href="shoufeibiaozhun.html">收费标准</a></li>
-              <li><a href="wenda.html">问答咨询</a></li>
-              <li><a href="we.html">关于我们</a></li>
-            </ul>
-          </div>
-          <!-- 背景搜索 -->
-          <div class="bg"></div>
+        </div>
       </div>
+      <!-- 平台成员导航 -->
+      <div class="topnav">
+        <ul class="w">
+          <li><a href="platforminfo.html">平台成员</a></li>
+          <li><a href="guizhang.html">规章制度</a></li>
+          <li><a href="devicelist.html">开放仪器</a></li>
+          <li><a href="shoufeibiaozhun.html">收费标准</a></li>
+          <li><a href="we.html">关于我们</a></li>
+        </ul>
+      </div>
+      <!-- 背景搜索 -->
+      <div class="bg">艰苦奋斗，勤于实践，崇尚科学，面向基层</div>
       <div class="toptitle">
         <div class="w">
           <a href="index.html" class="first">首页 > </a>
@@ -99,7 +441,7 @@
             <dd>规格型号：<span>Agilent 1200 HPLC－6310</span></dd>
             <dd>所属单位：<span>分析测试中心</span></dd>
             <dd>当前状态：<span>|   空闲</span></dd>
-            <dd>共享时长：<span>刘俊</span></dd>
+            <dd>共享时长：<span>5 | 小时</span></dd>
             <dd>当前委托测试数:</dd>
           </dl>
           <!-- 按钮组 -->
@@ -115,8 +457,8 @@
 
       <!-- tab选项卡 -->
       <div class="box demo2">
-        <ul class="tab_menu" style="margin-bottom: 5px;border-bottom: 1px solid #178c5b;">
-          <li>基本参数</li>
+        <ul class="tab_menu" style="margin-bottom: 5px;border-bottom: 1px solid #178c5b">
+          <li class="current">基本信息</li>
           <li>设备参数</li>
           <li>收费标准</li>
           <li>制样要求</li>
@@ -124,187 +466,199 @@
           <li>相关资料</li>
           <li>历史公告</li>
           <li>同类资源</li>
-          <li class="current">地理位置</li>
+          <li>地理位置</li>
           <li>模拟实验室</li>
         </ul>
         <div class="tab_box">
           <!-- 基本信息 -->
-          <div class="baseinfo hide">
-                <div class="item">
-                  <div class="left">
-                    <h4>设备名称:</h4>
-                    <h4>英文名称:</h4>
-                    <h4>出厂日期:</h4>
-                    <h4>联系人:</h4>
-                  </div>
-                  <div class="right">
-                    <h4>液相色谱质谱联用仪</h4>
-                    <h4>LC/MS</h4>
-                    <h4>2015-01-02</h4>
-                    <h4>于迎春</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="left">
-                    <h4>设备编号:</h4>
-                    <h4>价值(万元):</h4>
-                    <h4>购置日期:</h4>
-                    <h4>联系电话:</h4>
-                  </div>
-                  <div class="right">
-                    <h4>20150001</h4>
-                    <h4>2.4</h4>
-                    <h4>2015-01-02</h4>
-                    <h4>010-6441xxxx</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="left">
-                    <h4>品牌:</h4>
-                    <h4>厂商:</h4>
-                    <h4>所属单位:</h4>
-                    <h4>联系邮箱:</h4>
-                  </div>
-                  <div class="right">
-                    <h4>安捷伦</h4>
-                    <h4>综合楼A座113</h4>
-                    <h4>分析测试中心</h4>
-                    <h4>yunnandaxue@qq.com</h4>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="left">
-                    <h4>规格型号:</h4>
-                    <h4>存放地点:</h4>
-                    <h4>所属分类:</h4>
-                  </div>
-                  <div class="right">
-                    <h4>Agilent 1200 HPLC－6310</h4>
-                    <h4>文渊楼A座208</h4>
-                    <h4>质谱、能谱、波谱分析</h4>
-                  </div>
-                </div>
-          </div>
-          <div class="hide">
-              <!-- 测试项目 -->
-              <div class="test">
-                <!-- 参数、指标 -->
-                <div class="argus">
-                  <h3>主要技术参数、性能指标</h3>
-                  <p>主要技术参数、性能指标</p>
-                  <p>温度精度：不大于±0.1℃</p>
-                  <p>温度梯度：±1℃（100℃-360℃程序升温）</p>
-                  <p>升温速率：0.1℃-40℃/min（以0.1℃为增量任设）</p>
-                  <p>进样口、检测器控温范围：室温+10℃-400℃</p>
-                  <p>电压220V±10%，最大功率2200W</p>
-                </div>
-                <div class="field">
-                  <h3>主要测试研究领域(功能介绍)</h3>
-                  <p>主要用于生物样品、聚合物样品结构分析，也可用于各类样品的快速筛选。</p>
-                </div>
-                <div class="science">
-                  <h3>主要学科领域</h3>
-                  <p>化学；生物学；基础医学；环境科学技术。</p>
-                </div>
-                <div class="fit">
-                  <h3>主要附件、配套设备</h3>
-                  <p>该仪器配有ESI、APCI、ESCI等离子源。</p>
-                </div>
+          <div class="baseinfo">
+            <div class="bigtitle">基本信息</div>
+            <div class="item">
+              <div class="left">
+                <h4>设备名称:</h4>
+                <h4>英文名称:</h4>
+                <h4>出厂日期:</h4>
+                <h4>联系人:</h4>
               </div>
-          </div>
-          <div class="hide">
-            <!-- 收费标准 -->
-            <div class="table">
-              <table>
-                <tr>
-                  <th>测试项目</th>
-                  <th>计价单位</th>
-                  <th>校内价</th>
-                  <th>校外价</th>
-                  <th>院内价</th>
-                  <th>收费类型</th>
-                  <th>备注</th>
-                </tr>
-                <tr>
-                  <td>单一有机化合物含量测定</td>
-                  <td>元／小时</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>自助上机时费</td>
-                  <td>备注</td>
-                </tr>
-              </table>
+              <div class="right">
+                <h4>液相色谱质谱联用仪</h4>
+                <h4>LC/MS</h4>
+                <h4>2015-01-02</h4>
+                <h4>于迎春</h4>
+              </div>
             </div>
-            <div class="table">
-              <table>
-                <tr>
-                  <th>测试项目</th>
-                  <th>计价单位</th>
-                  <th>校内价</th>
-                  <th>校外价</th>
-                  <th>院内价</th>
-                  <th>收费类型</th>
-                  <th>备注</th>
-                </tr>
-                <tr>
-                  <td>单一有机化合物含量测定</td>
-                  <td>元／小时</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>自助上机时费</td>
-                  <td>备注</td>
-                </tr>
-              </table>
+            <div class="item">
+              <div class="left">
+                <h4>设备编号:</h4>
+                <h4>价值(万元):</h4>
+                <h4>购置日期:</h4>
+                <h4>联系电话:</h4>
+              </div>
+              <div class="right">
+                <h4>20150001</h4>
+                <h4>2.4</h4>
+                <h4>2015-01-02</h4>
+                <h4>010-6441xxxx</h4>
+              </div>
             </div>
-            <div class="table">
-              <table>
-                <tr>
-                  <th>测试项目</th>
-                  <th>计价单位</th>
-                  <th>校内价</th>
-                  <th>校外价</th>
-                  <th>院内价</th>
-                  <th>收费类型</th>
-                  <th>备注</th>
-                </tr>
-                <tr>
-                  <td>单一有机化合物含量测定</td>
-                  <td>元／小时</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>自助上机时费</td>
-                  <td>备注</td>
-                </tr>
-              </table>
+            <div class="item">
+              <div class="left">
+                <h4>品牌:</h4>
+                <h4>厂商:</h4>
+                <h4>所属单位:</h4>
+                <h4>联系邮箱:</h4>
+              </div>
+              <div class="right">
+                <h4>安捷伦</h4>
+                <h4>综合楼A座113</h4>
+                <h4>分析测试中心</h4>
+                <h4>yunnandaxue@qq.com</h4>
+              </div>
             </div>
-            <div class="table">
-              <table>
-                <tr>
-                  <th>测试项目</th>
-                  <th>计价单位</th>
-                  <th>校内价</th>
-                  <th>校外价</th>
-                  <th>院内价</th>
-                  <th>收费类型</th>
-                  <th>备注</th>
-                </tr>
-                <tr>
-                  <td>单一有机化合物含量测定</td>
-                  <td>元／小时</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>100.00</td>
-                  <td>自助上机时费</td>
-                  <td>备注</td>
-                </tr>
-              </table>
+            <div class="item">
+              <div class="left">
+                <h4>规格型号:</h4>
+                <h4>存放地点:</h4>
+                <h4>所属分类:</h4>
+              </div>
+              <div class="right">
+                <h4>Agilent 1200 HPLC－6310</h4>
+                <h4>文渊楼A座208</h4>
+                <h4>质谱、能谱、波谱分析</h4>
+              </div>
             </div>
           </div>
-          <div class="hide">
-            <!-- 制样要求 -->
+          <!-- 设备参数 -->              
+          <div class="canshu">                
+            <div class="test">
+              <div class="bigtitle">设备参数</div>
+              <!-- 参数、指标 -->
+              <div class="argus">
+                <h3>主要技术参数、性能指标</h3>
+                <p>主要技术参数、性能指标</p>
+                <p>温度精度：不大于±0.1℃</p>
+                <p>温度梯度：±1℃（100℃-360℃程序升温）</p>
+                <p>升温速率：0.1℃-40℃/min（以0.1℃为增量任设）</p>
+                <p>进样口、检测器控温范围：室温+10℃-400℃</p>
+                <p>电压220V±10%，最大功率2200W</p>
+              </div>
+              <div class="field">
+                <h3>主要测试研究领域(功能介绍)</h3>
+                <p>主要用于生物样品、聚合物样品结构分析，也可用于各类样品的快速筛选。</p>
+              </div>
+              <div class="science">
+                <h3>主要学科领域</h3>
+                <p>化学；生物学；基础医学；环境科学技术。</p>
+              </div>
+              <div class="fit">
+                <h3>主要附件、配套设备</h3>
+                <p>该仪器配有ESI、APCI、ESCI等离子源。</p>
+              </div>
+            </div>
+          </div>
+          <!-- 收费标准 -->
+          <div class="sf">
+            <div class="pay">
+              <div class="bigtitle">收费标准</div>
+            </div>                
+            <div class="table">
+              <table>
+                <tr>
+                  <th>测试项目</th>
+                  <th>计价单位</th>
+                  <th>校内价</th>
+                  <th>校外价</th>
+                  <th>院内价</th>
+                  <th>收费类型</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>单一有机化合物含量测定</td>
+                  <td>元／小时</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>自助上机时费</td>
+                  <td>备注</td>
+                </tr>
+              </table>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>测试项目</th>
+                  <th>计价单位</th>
+                  <th>校内价</th>
+                  <th>校外价</th>
+                  <th>院内价</th>
+                  <th>收费类型</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>单一有机化合物含量测定</td>
+                  <td>元／小时</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>自助上机时费</td>
+                  <td>备注</td>
+                </tr>
+              </table>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>测试项目</th>
+                  <th>计价单位</th>
+                  <th>校内价</th>
+                  <th>校外价</th>
+                  <th>院内价</th>
+                  <th>收费类型</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>单一有机化合物含量测定</td>
+                  <td>元／小时</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>自助上机时费</td>
+                  <td>备注</td>
+                </tr>
+              </table>
+            </div>
+            <div class="table">
+              <table>
+                <tr>
+                  <th>测试项目</th>
+                  <th>计价单位</th>
+                  <th>校内价</th>
+                  <th>校外价</th>
+                  <th>院内价</th>
+                  <th>收费类型</th>
+                  <th>备注</th>
+                </tr>
+                <tr>
+                  <td>单一有机化合物含量测定</td>
+                  <td>元／小时</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>100.00</td>
+                  <td>自助上机时费</td>
+                  <td>备注</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <!-- 制样要求 -->
+          <div class="zyyq">                
+            <div class="zhiyang">
+              <div class="bigtitle">制样要求</div>
+              <div class="science">
+                <h3>样品检测注意事项</h3>
+                <p>本设备禁止磁性样品</p>
+              </div>
+            </div>
             <div class="zhiyang">
               <div class="science">
                 <h3>样品检测注意事项</h3>
@@ -313,25 +667,26 @@
             </div>
             <div class="zhiyang">
               <div class="science">
-                <h3>实验检测注意事项</h3>
+                <h3>样品检测注意事项</h3>
                 <p>本设备禁止磁性样品</p>
               </div>
             </div>
             <div class="zhiyang">
               <div class="science">
-                <h3>实验器材检测注意事项</h3>
+                <h3>样品检测注意事项</h3>
                 <p>本设备禁止磁性样品</p>
               </div>
             </div>
             <div class="zhiyang">
               <div class="science">
-                <h3>实验室注意事项</h3>
+                <h3>样品检测注意事项</h3>
                 <p>本设备禁止磁性样品</p>
               </div>
             </div>
-          </div>
-          <div class="hide">
+          </div>          
+          <div class="pj">
             <!-- 评价 -->
+            <div class="bigtitle">评价</div>
             <div class="mark">
               <div class="science">
                 <div class="avatar">
@@ -351,7 +706,7 @@
               <div class="science">
                 <div class="avatar">
                   <img src="images/avatar.png" alt="">
-                  <span>茜茜</span>
+                  <span>唐琦</span>
                 </div>
                 <img src="images/star.png" alt="">
                 <img src="images/star.png" alt="">
@@ -366,9 +721,8 @@
               <div class="science">
                 <div class="avatar">
                   <img src="images/avatar.png" alt="">
-                  <span>晓雅</span>
+                  <span>银博</span>
                 </div>
-                <img src="images/star.png" alt="">
                 <img src="images/star.png" alt="">
                 <img src="images/star.png" alt="">
                 <img src="images/star.png" alt="">
@@ -378,8 +732,9 @@
               </div>
             </div>
           </div>
-          <div class="hide">
+          <div class="re">
             <!-- 相关材料 -->
+            <div class="bigtitle">相关资料</div>
             <div class="relainfo">
               <div class="item">
                 <span class="l">液相色谱质谱联用仪使用须知</span>
@@ -418,8 +773,9 @@
               </div>
             </div>
           </div>
-          <div class="hide">
+          <div class="history">
                 <!-- 历史公告 -->
+                <div class="bigtitle">历史公告</div>
                 <div class="history">
                   <div class="contentbox">
                     <div class="top">
@@ -445,147 +801,131 @@
                   </div>
                 </div>
           </div>
-          <div class="hide">
-                <!-- 同类资源 -->
-                <div class="resour">
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                      <div class="item">
-                        <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
-                        <dl class="first">
-                          <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
-                          <dd style="color:#17c488">「使用中」</dd>
-                        </dl>
-                        <dl>
-                          <dd>规格型号:<span>Hitachi HT7700</span></dd>
-                          <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
-                          <dd>所在地点:<span>综合楼A座113</dd>
-                        </dl>
-                        <dl class="danwei">
-                          <dd>所属单位:<span>国家开放共享平台</span></dd>
-                          <dd>所属分类:<span>电子设备</span></dd>
-                        </dl>
-                        <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
-                        <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
-                      </div>
-                </div>
+          <div class="res">
+            <!-- 同类资源 -->
+            <div class="bigtitle">同类资源</div>
+            <div class="resour">
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+              <div class="item">
+                <a href="devicedetail.html"><img src="images/yiqi.png" alt=""></a>
+                <dl class="first">
+                  <dd style="width:140px;">120kV透射电子显微镜(Hitachi HT7700)</dd>              
+                  <dd style="color:#17c488">「使用中」</dd>
+                </dl>
+                <dl>
+                  <dd>规格型号:<span>Hitachi HT7700</span></dd>
+                  <dd>负责人&nbsp;&nbsp;&nbsp;&nbsp;:<span>李雪 0871-5931551</dd>
+                  <dd>所在地点:<span>综合楼A座113</dd>
+                </dl>
+                <dl class="danwei">
+                  <dd>所属单位:<span>国家开放共享平台</span></dd>
+                  <dd>所属分类:<span>电子设备</span></dd>
+                </dl>
+                <div class="selftest"><a href="selftest.html" style="color:#17c488;">自助测试</a></div>
+                <div class="othertest"><a href="apply.html" style="color:#2072d1;">委托测试</a></div>
+              </div>
+            </div>
           </div>
           <!-- 百度地图容器 -->
-          <div class="baseinfo" id="allmap"></div>
+          <div class="" id="allmap"></div>
           <!-- 实验室模拟环境 -->
-          <div class="hide">
-            <p>实验室模拟环境正在开发阶段，下个版本上线</p>
+          <div class="moni" style="width: 1180px;height: 590px;">
+            <!-- <p>实验室模拟环境正在开发阶段，下个版本上线</p> -->
+            <div style="text-align:center;clear:both;"></div>
+            <canvas id="canvas">你的浏览器不支持HTML5画布技术，请使用谷歌浏览器。</canvas>
           </div>
         </div>
       </div>
-    </div>
-    <!-- 中间主题内容结束 -->           
+    </div>        
   </div>
     <!-- 底部 -->      
     <div class="footer w">
@@ -770,12 +1110,45 @@
     <script src="assets/layer/layer.js"></script>
     <script src="assets/Validate-master/jquery-validate.min.js"></script>
     <script src="assets/form-master/jquery.form.js"></script>
-    <script src="js/jquery.tabs.js"></script>
     <script src="js/login.js"></script>
     <script>
       $(function(){
-        $('.demo2').Tabs({
-          event:'click'
+        // 鼠标滚动事件       
+        $(window).scroll(function(){
+          // console.log($(window).scrollTop())
+          if($(document).scrollTop()>=850){
+            $('.tab_menu').css({"position":"fixed","top":"0px","zIndex":"99"});
+          }else{
+            $('.tab_menu').css({"position":"static"});          
+          }
+        });             
+        $('.tab_menu').on('click','li',function(){
+          var liIndex=$(this).index();
+          $(this).addClass("current").siblings("li").removeClass("current");
+          var top_0=$('.baseinfo').offset().top;
+          var top_1=$('.canshu').offset().top;
+          var top_2=$('.sf').offset().top;
+          var top_3=$('.zyyq').offset().top;
+          // var top_4=$('.yuyue').offset().top;
+          var top_4=$('.pj').offset().top;
+          var top_5=$('.re').offset().top;
+          var top_6=$('.history').offset().top;
+          var top_7=$('.res').offset().top;
+          var top_8=$('#allmap').offset().top;
+          var top_9=$('.moni').offset().top;
+          switch (liIndex) {
+            case 0 :$("html,body").animate({scrollTop:top_0-80},500); break;
+            case 1 :$("html,body").animate({scrollTop:top_1-100},500); break;
+            case 2 :$("html,body").animate({scrollTop:top_2-50},500); break;
+            case 3 :$("html,body").animate({scrollTop:top_3-50},500); break;
+            case 4 :$("html,body").animate({scrollTop:top_4-50},500); break;
+            case 5 :$("html,body").animate({scrollTop:top_5-50},500); break;
+            case 6 :$("html,body").animate({scrollTop:top_6-50},500); break;
+            case 7 :$("html,body").animate({scrollTop:top_7-50},500); break;
+            case 8 :$("html,body").animate({scrollTop:top_8-50},500); break;
+            case 9 :$("html,body").animate({scrollTop:top_9-50},500); break;
+            // case 10 :$("html,body").animate({scrollTop:top_10},500); break;
+          };
         });
         $('.btntwo').on('click',function(){
           if($(this).text()=="收藏"){
