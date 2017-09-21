@@ -447,7 +447,7 @@
             <!-- 按钮组 -->
             <div class="btn">
               <div class="btntwo">收藏</div>
-              <div class="btnthree">申请培训</div>
+              <div class="btnthree" id="btn-sq">申请培训</div>
             </div>
             <div class="selftest"><a href="javascript:void(0)">自助测试</a></div>
             <div class="othertest"><a href="javascript:void(0)">委托测试</a></div>
@@ -1288,6 +1288,74 @@
       <button id="tan-next">下一步</button>
     </div>
   </div>
+    <!-- 申请培训 -->
+  <div class="xzkc">
+    <div class="title">申请培训</div>
+    <div class="title-cont">
+      <li>选择培训课程</li>
+      <li><input type="radio" name="type" id="">生物制剂</li>
+      <li><input type="radio" name="type" id="">化学检测</li>
+      <li><input type="radio" name="type" id="">药物分析</li>
+    </div>
+    <div class="btngroup">
+      <div style="float: right;">
+        <span class="f">取消</span>
+        <span class="s" id="s-next">下一步</span>
+      </div>
+    </div>
+  </div>
+  <div class="baseinfo-cont">
+    <div class="title">申请培训</div>
+    <div class="baseinfo-item">
+      <div class="top-info">课程信息</div>
+      <div class="base-l">
+        <span class="l">培训课程：</span>
+        <span class="r">化学检测</span>
+      </div>
+      <div class="base-r">
+        <span class="l">课题名称：</span>
+        <span class="r">分析中心101室</span>
+      </div>
+    </div>
+    <div class="baseinfo-item">
+      <div class="top-info">设备信息</div>
+      <div class="base-l">
+        <span class="l">培训编号：</span>
+        <span class="r">TY2016000001</span>
+        <span class="l">规格型号：</span>
+        <span class="r">Agilent 1200</span>
+      </div>
+      <div class="base-r">
+        <span class="l">设备名称：</span>
+        <span class="r">液相色谱质谱联用仪</span>
+        <span class="l">存放地点：</span>
+        <span class="r">分析中心101室</span>
+      </div>
+    </div>
+    <div class="baseinfo-item">
+      <div class="top-info">人员信息</div>
+      <div class="base-l">
+        <span class="l">申请人：</span>
+        <span class="r">张三</span>
+        <span class="l">申请时间：</span>
+        <span class="r">2017-08-09</span>
+        <span class="l">联系电话：</span>
+        <span class="r">01254789</span>
+      </div>
+      <div class="base-r">
+        <span class="l">身份信息：</span>
+        <span class="r">本科生</span>
+        <span class="l">电子邮件：</span>
+        <span class="r">1234567@qq.com</span>
+      </div>
+    </div>
+    <div class="btngroup">
+      <div style="float: right;">
+        <span class="f">取消</span>
+        <span class="s" id="btn-subm">提交</span>
+      </div>
+    </div>
+  </div>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="assets/layer/layer.js"></script>
   <script src="assets/Validate-master/jquery-validate.min.js"></script>
@@ -1342,8 +1410,29 @@
           }
           
         });
-        $('.btnthree').on('click',function(){
-         
+        // 申请培训点击事件
+        $('#btn-sq').on('click',function(){
+          layer.open({
+            type: 1,
+            title:false,
+            area: ['498px', '368px'], //宽高
+            content:$('.xzkc')
+          });
+        });
+        $('#s-next').on('click',function(){
+          layer.closeAll();
+          layer.open({
+            type: 1,
+            title:false,
+            area: ['498px', '570px'], //宽高
+            content:$('.baseinfo-cont')
+          });
+        });
+        $('span.f').on('click',function(){
+          layer.closeAll();
+        });
+        $('#btn-subm').on('click',function(){
+          layer.closeAll();
         });
       })
   </script>

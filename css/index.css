@@ -269,13 +269,11 @@
 }
 .index .public .right .top .content span{
   float: left;
-  font-family:PingFangSC-Light;
   font-size:14px;
   color:#a4a4a4;
 }
 .index .public .right .top .content p{
   float: left;
-  font-family:PingFangSC-Light;
   font-size:14px;
   color:#666666;
   line-height:26px;
@@ -307,7 +305,10 @@
   font-size: 14px;
   color: #666666;
   line-height: 30px;
-  cursor: pointer;
+  cursor: pointer;  
+}
+.index .public .right .top .title h6:hover{
+  background-color: #F9F9F9;
 }
 .index .public .right .bottom{
   width: 100%;

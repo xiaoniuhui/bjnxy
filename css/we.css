@@ -69,6 +69,8 @@
 }
 .m-img img{
   float: left;
+  width: 288px;
+  height: 200px;
 }
 /*提示信息*/
 .m-info {
