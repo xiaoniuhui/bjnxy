@@ -248,6 +248,10 @@ a{
   border: 1px solid #2072d1;
 }
 /*分页按钮组公共样式*/
+.current{
+  background-color: #777 !important;
+  color: #fff !important;
+}
 .device .rightbox .pagebtn{
   width: 100%;
   font-family:MicrosoftYaHei;
@@ -288,8 +292,7 @@ a{
   text-align:center;
 }
 .device .rightbox .pagebtn .total{
-  display: inline-block;
-  font-family:MicrosoftYaHei;
+  margin-right: 15px;
   font-size:12px;
   color:#777777;
 }
