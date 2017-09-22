@@ -432,7 +432,7 @@
     <div class="content">
       <!-- 仪器显示 -->
       <div class="picture">
-        <img src="images/bigyiqi.png" alt="">
+        <img src="" alt="">
         <div class="right">
           <dl>
             <dt>液相色谱质谱联用仪</dt>
@@ -453,7 +453,7 @@
         </div>
       </div>
       <!-- 小图片 -->
-      <div class="smallp"><img src="images/smallyiqi.png" alt=""></div>
+      <div class="smallp"><img src="" alt=""></div>
 
       <!-- tab选项卡 -->
       <div class="box demo2">
@@ -1232,6 +1232,20 @@
       })
       map.addOverlay(marker); //在地图中添加marker
       searchInfoWindow.open(marker);
+  </script>
+  <!-- 获取地址栏参数 -->
+  <script>
+    function getUrlcanshu(){
+      var url=window.location.search;
+      var imgUrl=url.substr(1);
+      return imgUrl;
+    }
+    var img_url="images/"+getUrlcanshu()
+    $(function(){
+      $('.picture img').css({"width":"430px"}).attr('src',img_url);
+      $('.smallp img').css({"width":"72px"}).attr('src',img_url)
+    });
+
   </script>    
 </body>
 </html>
